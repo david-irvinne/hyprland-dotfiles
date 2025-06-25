@@ -65,6 +65,7 @@ button:hover {
 #wireplumber,
 #tray,
 #network,
+#custom-bluetooth,
 #mode,
 #scratchpad {
   margin-top: 2px;
@@ -84,10 +85,13 @@ button:hover {
     color: @mauve;
     border-bottom: 2px solid @mauve;
 }
-
 #pulseaudio {
     color: @blue;
     border-bottom: 2px solid @blue;
+}
+#custom-bluetooth{
+    color: @lavender;
+    border-bottom: 2px solid @lavender;
 }
 
 #network {

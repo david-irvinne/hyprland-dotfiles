@@ -2,7 +2,7 @@
   "position": "top",
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
-  "modules-right": ["network","pulseaudio", "battery", "clock"],
+  "modules-right": ["network","pulseaudio", "custom/bluetooth","battery", "clock"],
 
   "clock": {
     "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
@@ -39,5 +39,12 @@
           "default": ["", "", " "]
       },
       "on-click": "pavucontrol"
+  },
+  "custom/bluetooth": {
+    "format" :"{}",
+    "exec": "~/.config/waybar/scripts/bt-status.sh",
+    "interval": 5,
+    "on-click" : "~/.config/rofi/scripts/rofi-bt.sh"
   }
+
 }

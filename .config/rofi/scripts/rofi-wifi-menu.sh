@@ -24,9 +24,9 @@ is_cache_valid() {
   fi
 }
 
-if ! is_cache_valid; then
-  refresh_wifi_list
-fi
+# if ! is_cache_valid; then
+#   refresh_wifi_list
+# fi
 
 if nmcli radio wifi | grep -q enabled; then
   OPTIONS="󰤭  Disable WiFi\n🔄  Refresh WiFi List\n"
