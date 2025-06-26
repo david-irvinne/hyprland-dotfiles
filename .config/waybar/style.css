@@ -1,10 +1,10 @@
-@import "mocha.css"; 
+@import "/home/david/.config/colors/mocha.css"; 
 
 * {
     font-family: "MesloLGS Nerd Font Mono Bold";
-    font-size: 14px;
+    font-size: 13px;
     min-height: 0;
-    font-weight: bold;
+    font-weight: bold; 
 }
 
 window#waybar {
@@ -18,8 +18,8 @@ window#waybar {
 #window {
     color: @mauve;
     margin: 8px;
-    padding-left: 8;
-    padding-right: 8;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 button {
@@ -72,36 +72,41 @@ button:hover {
   margin-bottom: 2px;
   margin-left: 4px;
   margin-right: 4px;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #clock {
-    color: @maroon;
-    border-bottom: 2px solid @maroon;
+    color: @lavender;
+    border: 1px solid @lavender;
+    border-radius: 12px;
 }
 
 #clock.date {
     color: @mauve;
-    border-bottom: 2px solid @mauve;
+    border: 1px solid @mauve;
+    border-radius: 12px;
 }
 #pulseaudio {
-    color: @blue;
-    border-bottom: 2px solid @blue;
+    color: @sapphire;
+    border: 1px solid @sapphire;
+    border-radius: 12px;
 }
 #custom-bluetooth{
-    color: @lavender;
-    border-bottom: 2px solid @lavender;
+    color: @sky;
+    border: 1px solid @sky;
+    border-radius: 12px;
 }
-
+#battery {
+    color: @teal;
+    border: 1px solid @teal;
+    border-radius: 12px;
+}
 #network {
-    color: @yellow;
-    border-bottom: 2px solid @yellow;
+    color: @blue;
+    border: 1px solid @blue;
+    border-radius: 12px;
 }
-#network:hover {
-    color: @maroon;
-}
-
 #idle_inhibitor {
     margin-right: 12px;
     color: #7cb342;
@@ -111,10 +116,7 @@ button:hover {
     color: @red;
 }
 
-#battery {
-    color: @green;
-    border-bottom: 2px solid @green;
-}
+
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left>widget:first-child>#workspaces {
