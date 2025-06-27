@@ -2,7 +2,7 @@
   "position": "top",
   "modules-left": ["hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["clock","network","pulseaudio", "custom/bluetooth","battery"],
+  "modules-right": ["clock","network", "custom/bluetooth", "pulseaudio", "custom/brightness","battery"],
 
   "clock": {
     "format": "<span >   </span>{:%a %d %H:%M}",
@@ -45,6 +45,13 @@
     "exec": "~/.config/waybar/scripts/bt-status.sh",
     "interval": 5,
     "on-click" : "~/.config/rofi/scripts/rofi-bt.sh"
-  }
-
+  },
+  "custom/brightness": {
+    "format": "   {}%",
+    "interval": 5,
+    "exec": "brightnessctl get | awk '{printf \"%d\", $1 * 100 / 255}'",
+    "on-scroll-up": "brightnessctl set +1%",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "tooltip": false
+  },
 }

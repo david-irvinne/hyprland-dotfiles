@@ -8,18 +8,10 @@
 }
 
 window#waybar {
-    background: rgba(30, 30, 46, 0.6);
+    background: transparent;
     color: @overlay0;
     transition-property: background-color;
     transition-duration: 0.1s;
-    border-bottom: 1px solid @overlay1;
-}
-
-#window {
-    color: @mauve;
-    margin: 8px;
-    padding-left: 8px;
-    padding-right: 8px;
 }
 
 button {
@@ -54,59 +46,12 @@ button:hover {
     background-color: #eb4d4b;
 }
 
-#pulseaudio,
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#wireplumber,
-#tray,
-#network,
-#custom-bluetooth,
-#mode,
-#scratchpad {
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin-left: 4px;
-  margin-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#clock {
-    color: @lavender;
-    border: 1px solid @lavender;
-    border-radius: 12px;
-}
-
 #clock.date {
     color: @mauve;
     border: 1px solid @mauve;
     border-radius: 12px;
 }
-#pulseaudio {
-    color: @sapphire;
-    border: 1px solid @sapphire;
-    border-radius: 12px;
-}
-#custom-bluetooth{
-    color: @sky;
-    border: 1px solid @sky;
-    border-radius: 12px;
-}
-#battery {
-    color: @teal;
-    border: 1px solid @teal;
-    border-radius: 12px;
-}
-#network {
-    color: @blue;
-    border: 1px solid @blue;
-    border-radius: 12px;
-}
+
 #idle_inhibitor {
     margin-right: 12px;
     color: #7cb342;
@@ -115,8 +60,6 @@ button:hover {
 #idle_inhibitor.activated {
     color: @red;
 }
-
-
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left>widget:first-child>#workspaces {
@@ -128,9 +71,46 @@ button:hover {
     margin-right: 0;
 }
 
-#custom-vpn {
+#window,
+#clock,
+#network,
+#custom-bluetooth,
+#pulseaudio, 
+#custom-bluetooth, 
+#battery,
+#custom-brightness{
+    background: @surface0;
     color: @lavender;
-    border-radius: 15px;
-    padding-left: 6px;
-    padding-right: 6px;
+    margin-top: 6px;
+    margin-bottom: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+#window{
+    border-radius: 12px;
+    margin-left: 6px;
+}
+#clock{
+    border-radius: 12px;
+    margin-right: 6px;
+}
+#network{
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+#custom-bluetooth{
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    margin-right: 6px;
+}
+#pulseaudio{
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+#battery{
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    margin-right: 6px;
 }
