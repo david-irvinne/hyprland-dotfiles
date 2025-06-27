@@ -1,5 +1,9 @@
 # Personal Hyprland dotfiles configuration
-https://github.com/user-attachments/assets/4dfe0a01-aea1-4e81-a617-74478d19d764
+
+
+https://github.com/user-attachments/assets/cc27ded5-2e7d-4952-b513-44d24a9219af
+
+
 
 ## dependencies list
 - hyprland (window tiling manager)
