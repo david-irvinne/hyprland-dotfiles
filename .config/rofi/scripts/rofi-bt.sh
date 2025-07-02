@@ -41,7 +41,7 @@ manage_devices() {
             fi
         done
 
-        selection=$(printf "%s\n" "${name_list[@]}" | rofi -normal-window -dmenu -p "Bluetooth Devices")
+        selection=$(printf "%s\n" "${name_list[@]}" | rofi -dmenu -p "Bluetooth Devices")
 
         [[ -z "$selection" ]] && exit
 
@@ -51,7 +51,7 @@ manage_devices() {
 
         mac="${device_map[$selection]}"
 
-        action=$(echo -e "Connect\nDisconnect\nPair\nRemove" | rofi -normal-window -dmenu -p "$selection")
+        action=$(echo -e "Connect\nDisconnect\nPair\nRemove" | rofi -dmenu -p "$selection")
 
         case "$action" in
             "Connect") bluetoothctl connect "$mac" ;;
@@ -71,7 +71,7 @@ else
     toggle_label="Turn on Bluetooth"
 fi
 
-option=$(printf "%s\n%s" "$toggle_label" "Manage Devices" | rofi -normal-window -dmenu -p "Bluetooth")
+option=$(printf "%s\n%s" "$toggle_label" "Manage Devices" | rofi -dmenu -p "Bluetooth")
 
 case "$option" in
     "$toggle_label") toggle_power ;;
