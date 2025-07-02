@@ -1,5 +1,5 @@
 # Personal Hyprland dotfiles configuration
-https://github.com/user-attachments/assets/4dfe0a01-aea1-4e81-a617-74478d19d764
+https://github.com/user-attachments/assets/4837e0e8-57fc-4eec-a142-28b601f6c5ff
 
 ## dependencies list
 - hyprland (window tiling manager)
@@ -8,3 +8,4 @@ https://github.com/user-attachments/assets/4dfe0a01-aea1-4e81-a617-74478d19d764
 - hyprlock 
 - hypridle
 - hyprpaper (wallpaper)
+- Fonts: CaskaydiaCove, Nerd, AwesomeFont
