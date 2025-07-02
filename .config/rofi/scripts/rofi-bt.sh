@@ -1,8 +1,11 @@
 #!/bin/bash
 
+get_powered() {
+    bluetoothctl show | grep -q "Powered: yes"
+}
+
 toggle_power() {
-    current=$(bluetoothctl show | grep "Powered:" | awk '{print $2}')
-    if [[ "$current" == "yes" ]]; then
+    if get_powered; then
         bluetoothctl power off
     else
         bluetoothctl power on
@@ -11,7 +14,7 @@ toggle_power() {
 
 manage_devices() {
     while true; do
-        bluetoothctl scan on & sleep 3 && bluetoothctl scan off
+        bluetoothctl scan on & sleep 2 && bluetoothctl scan off
 
         mapfile -t devices < <(bluetoothctl devices)
 
@@ -27,7 +30,6 @@ manage_devices() {
             mac=$(echo "$line" | awk '{print $2}')
             name="${line#* $mac }"
 
-            # Cek apakah device sedang connected
             info=$(bluetoothctl info "$mac")
             if echo "$info" | grep -q "Connected: yes"; then
                 name="$name [CONNECTED]"
@@ -62,11 +64,17 @@ manage_devices() {
     done
 }
 
-# Menu utama
-option=$(echo -e "Toggle Power\nManage Devices" | rofi -normal-window -dmenu -p "Bluetooth")
+# main menu
+if get_powered; then
+    toggle_label="Turn off Bluetooth"
+else
+    toggle_label="Turn on Bluetooth"
+fi
+
+option=$(printf "%s\n%s" "$toggle_label" "Manage Devices" | rofi -normal-window -dmenu -p "Bluetooth")
 
 case "$option" in
-    "Toggle Power") toggle_power ;;
+    "$toggle_label") toggle_power ;;
     "Manage Devices") manage_devices ;;
     *) exit ;;
 esac

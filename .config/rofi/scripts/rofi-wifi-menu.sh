@@ -14,20 +14,6 @@ refresh_wifi_list() {
   date +%s > "$CACHE_TIMESTAMP"
 }
 
-is_cache_valid() {
-  if [ -f "$CACHE_FILE" ] && [ -f "$CACHE_TIMESTAMP" ]; then
-    local last=$(<"$CACHE_TIMESTAMP")
-    local now=$(date +%s)
-    (( now - last < CACHE_DURATION ))
-  else
-    return 1
-  fi
-}
-
-# if ! is_cache_valid; then
-#   refresh_wifi_list
-# fi
-
 if nmcli radio wifi | grep -q enabled; then
   OPTIONS="󰤭  Disable WiFi\n🔄  Refresh WiFi List\n"
 else
