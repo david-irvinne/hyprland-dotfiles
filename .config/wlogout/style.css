@@ -1,0 +1,51 @@
+@import "/home/david/hypr-config/.config/colors/mocha.css"; 
+
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+window {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.7);    
+}
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    border-radius: 54px;
+    border:transparent;
+    background-color: rgba(136, 57, 239, 0.1);
+    margin: 10px;
+}
+
+button:hover {
+    background-size: 30%;
+    background-color: rgba(136, 57, 239, 0.6);
+}
+
+#lock {
+    background-image: image(url("./icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("./icons/logout.png"));
+}
+
+#shutdown {
+    background-image: image(url("./icons/power.png"));
+}
+
+#reboot {
+    background-image: image(url("./icons/restart.png"));
+}
+
+#suspend {
+    background-image: image(url("./icons/sleep.png"));
+}
+
+#hibernate {
+    background-image: image(url("./icons/hibernate.png"));
+}
