@@ -9,9 +9,6 @@
 
 window#waybar {
     background: transparent;
-    color: @overlay0;
-    transition-property: background-color;
-    transition-duration: 0.1s;
 }
 
 button {
@@ -80,37 +77,43 @@ button:hover {
 #battery,
 #custom-brightness{
     background: @surface0;
-    color: @lavender;
     margin-top: 6px;
     margin-bottom: 3px;
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 4px;
     padding-bottom: 4px;
+    color: @rosewater;
 }
 #window{
     border-radius: 12px;
     margin-left: 6px;
+    color: @mauve;
 }
 #clock{
     border-radius: 12px;
     margin-right: 6px;
+    color: @maroon;
 }
 #network{
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
+    color: @sapphire;
 }
 #custom-bluetooth{
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     margin-right: 6px;
+    color: @blue;
 }
 #pulseaudio{
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
+    color: @teal;
 }
 #battery{
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     margin-right: 6px;
+    color: @red;
 }

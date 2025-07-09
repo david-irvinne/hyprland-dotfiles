@@ -4,9 +4,35 @@
   "modules-center": ["hyprland/workspaces"],
   "modules-right": ["clock","network", "custom/bluetooth", "pulseaudio", "custom/brightness","battery"],
 
+  "hyprland/window": {
+    "format" : "     {}"
+  },
+
   "clock": {
-    "format": "<span >   </span>{:%a %d %H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+      
+      "format": "   {:%H:%M}",
+      "format-alt": "{:L%a, %m月 %d日 %Y年 %R}",
+      "tooltip-format": "<span font_desc='WenQuanYi Zen Hei Mono 9'>{calendar}</span>",
+      "calendar": {
+              "mode"          : "year",
+              "mode-mon-col"  : 3,
+              "weeks-pos"     : "right",
+              "on-scroll"     : 1,
+              "format": {
+                        "months":     "<span color='#ffead3'><b>{}</b></span>",
+                        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                        }
+              },
+      "actions":  {
+                  "on-click-right": "mode",
+                  "on-click-forward": "tz_up",
+                  "on-click-backward": "tz_down",
+                  "on-scroll-up": "shift_up",
+                  "on-scroll-down": "shift_down"
+                  }
   },
   "battery": {
     "states": {
@@ -51,7 +77,7 @@
     "interval": 5,
     "exec": "brightnessctl get | awk '{printf \"%d\", $1 * 100 / 255}'",
     "on-scroll-up": "brightnessctl set +1%",
-    "on-scroll-down": "brightnessctl --min-value=20 set 1%-",
+    "on-scroll-down": "brightnessctl --min-value=5 set 1%-",
     "tooltip": false
   }
 }
