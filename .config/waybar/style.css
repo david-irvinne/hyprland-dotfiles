@@ -1,7 +1,7 @@
 @import "/home/david/hypr-config/.config/colors/mocha.css"; 
 
 * {
-    font-family: "MesloLGS Nerd Font Mono Bold";
+    font-family: "CaskaydiaCove NF Light";
     font-size: 13px;
     min-height: 0;
     font-weight: bold; 
@@ -105,4 +105,24 @@ window#waybar {
     padding-right: 15px;
     margin-right: 6px;
     color: @red
+}
+
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+}
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 5px;
+    background-color: @lavender;
+}
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: @mauve;
 }

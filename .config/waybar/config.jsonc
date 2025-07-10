@@ -2,7 +2,7 @@
   "position": "top",
   "modules-left": ["hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["clock","network", "custom/bluetooth", "pulseaudio", "custom/brightness","battery", "custom/power"],
+  "modules-right": ["clock","network", "custom/bluetooth", "group/audio", "custom/brightness","battery", "custom/power"],
 
   "hyprland/window": {
     "format" : "     {}"
@@ -26,7 +26,7 @@
   },
   "clock": {
       
-      "format": "   {:%H:%M}",
+      "format": "  {:%H:%M}",
       "format-alt": "{:L%a, %m月 %d日 %Y年 %R}",
       "tooltip-format": "<span font_desc='WenQuanYi Zen Hei Mono 9'>{calendar}</span>",
       "calendar": {
@@ -68,19 +68,19 @@
   "network": {
     "interface": "wlan0",
     "format-wifi": "<span size='13000'>  </span>{essid}",
-    "format-ethernet": "<span size='13000'>󰤭  </span> Disconnected",
+    "format-ethernet": "<span size='13000'>󰖪  </span> Disconnected",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "<span size='13000'>  </span>Disconnected",
+    "format-disconnected": "<span size='13000'>󰖪  </span>未接続",
     "tooltip-format-wifi": "Signal Strength: {signalStrength}%",
     "on-click": "~/.config/rofi/scripts/rofi-wifi-menu.sh"
   },
   "pulseaudio": {
-      "format": "{icon}    {volume} %",
+      "format": "{icon}  {volume}%",
       "format-muted": " ",
       "format-icons": {
           "alsa_output.pci-0000_00_1f.3.analog-stereo": " ",
-          "headphones": "",
-          "handsfree": "",
+          "headphone": "",
+          "hands-free": "",
           "headset": "",
           "phone": "",
           "portable": "",
@@ -91,6 +91,17 @@
       "on-click": "pavucontrol",
       "tooltip": false
   },
+  "pulseaudio/slider" :{
+    "min": 0, "max": 100, "orientation": "horizontal"
+  },
+  "group/audio": {
+    "orientation" : "horizontal",
+    "modules": [ "pulseaudio", "pulseaudio/slider"],
+    "drawer": {
+      "transition-duration": 400
+    }
+  },
+
   "custom/bluetooth": {
     "format" :"{}",
     "exec": "/home/david/hypr-config/.config/waybar/scripts/bt-status.sh",
@@ -98,7 +109,7 @@
     "on-click" : "~/.config/rofi/scripts/rofi-bt.sh"
   },
   "custom/brightness": {
-    "format": "   {}%",
+    "format": "  {}%",
     "interval": 5,
     "exec": "brightnessctl get | awk '{printf \"%d\", $1 * 100 / 255}'",
     "on-scroll-up": "brightnessctl set +1%",
@@ -107,7 +118,6 @@
   },
   "custom/power": {
     "format": "",
-    /* "on-click": "bash /home/david/hypr-config/.config/wlogout/scripts/blur-background.sh", */
     "on-click": "wlogout",    
     "tooltip": false
   }
