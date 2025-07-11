@@ -117,7 +117,7 @@
     "tooltip": false
   },
   "custom/power": {
-    "format": "",
+    "format": " ",
     "on-click": "wlogout",    
     "tooltip": false
   }

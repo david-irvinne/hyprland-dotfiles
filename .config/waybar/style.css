@@ -78,7 +78,7 @@ window#waybar {
 #clock{
     border-radius: 12px;
     margin-right: 6px;
-    color: @maroon;
+    color: @sky;
 }
 #network{
     border-top-left-radius: 12px;
@@ -97,32 +97,37 @@ window#waybar {
     color: @lavender;
 }
 #battery{
-    color: @red;
+    color: @mauve;
 }
 #custom-power {
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     padding-right: 15px;
     margin-right: 6px;
-    color: @red
+    color: @mauve;
 }
 
-
+#pulseaudio-slider{
+    background: @surface0;
+    border:none;
+}
 #pulseaudio-slider slider {
     min-height: 0px;
     min-width: 0px;
     opacity: 0;
-    background-image: none;
-    border: none;
+    background: @mauve;
+    border:none;
 }
 #pulseaudio-slider trough {
     min-height: 10px;
-    min-width: 80px;
+    min-width: 100px;
     border-radius: 5px;
     background-color: @lavender;
+    border:none;
 }
 #pulseaudio-slider highlight {
     min-width: 10px;
     border-radius: 5px;
-    background-color: @mauve;
+    background-color: rgb(136, 57, 239);
+    border:none;
 }
