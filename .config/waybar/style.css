@@ -39,6 +39,8 @@ window#waybar {
 #custom-bluetooth, 
 #battery,
 #custom-power,
+#pulseaudio-slider,
+#backlight-slider,
 #backlight{
     background: @base;
     margin-top: 6px;
@@ -52,6 +54,7 @@ window#waybar {
 #window{
     border-radius: 12px;
     margin-left: 6px;
+    margin-right: 18px;
     color: @mauve;
 }
 
