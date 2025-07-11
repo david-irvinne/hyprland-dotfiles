@@ -2,7 +2,7 @@
   "position": "top",
   "modules-left": ["hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["clock","network", "custom/bluetooth", "group/audio", "custom/brightness","battery", "custom/power"],
+  "modules-right": ["clock","network", "custom/bluetooth", "group/audio", "group/brightness","battery", "custom/power"],
 
   "hyprland/window": {
     "format" : "     {}"
@@ -102,19 +102,29 @@
     }
   },
 
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", ""]
+  },
+  "backlight/slider" :{
+    "min": 0, "max": 100,
+    "orientation": "horizontal",
+    "device": "intel_backlight"
+  },
+  "group/brightness": {
+    "orientation" : "horizontal",
+    "modules": [ "backlight", "backlight/slider"],
+    "drawer": {
+      "transition-duration": 400
+    }
+  },
+
   "custom/bluetooth": {
     "format" :"{}",
     "exec": "/home/david/hypr-config/.config/waybar/scripts/bt-status.sh",
     "interval": 5,
     "on-click" : "~/.config/rofi/scripts/rofi-bt.sh"
-  },
-  "custom/brightness": {
-    "format": "  {}%",
-    "interval": 5,
-    "exec": "brightnessctl get | awk '{printf \"%d\", $1 * 100 / 255}'",
-    "on-scroll-up": "brightnessctl set +1%",
-    "on-scroll-down": "brightnessctl --min-value=5 set 1%-",
-    "tooltip": false
   },
   "custom/power": {
     "format": " ",
