@@ -1,11 +1,14 @@
 # Personal Hyprland dotfiles configuration
-https://github.com/user-attachments/assets/4837e0e8-57fc-4eec-a142-28b601f6c5ff
+https://github.com/user-attachments/assets/9a1fc7c2-45cd-4f00-810a-2a0fd4bffee0
 
 ## dependencies list
-- hyprland (window tiling manager)
-- waybar (top bar)
-- rofi (app launcher)
-- hyprlock 
-- hypridle
-- hyprpaper (wallpaper)
+- window tiling manager: hyprland 
+- top bar: waybar
+- app launcher: rofi
+- Lockscreen: hyprlock 
+- Idle Management: hypridle
+- Wallpaper: hyprpaper
 - Fonts: CaskaydiaCove, Nerd, AwesomeFont
+- Color theme (optional): Catppuccin Mocha
+
+Works on EndeavourOS (Arch Linux based)
