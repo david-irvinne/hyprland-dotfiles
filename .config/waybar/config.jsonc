@@ -2,10 +2,10 @@
   "position": "top",
   "modules-left": ["hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["clock","network", "custom/bluetooth", "group/audio", "group/brightness","battery", "custom/power"],
+  "modules-right": ["clock","network", "custom/bluetooth", "pulseaudio", "backlight","battery", "custom/power"],
 
   "hyprland/window": {
-    "format" : "     {}"
+    "format" : "  {}"
   },
   "hyprland/workspaces": {
     "sort-by-name": true,
@@ -63,7 +63,8 @@
     "format-alt": "<span size='13000'>{icon} </span> {time}",
     "format-full": "<span size='13000'> </span>{capacity}%",
     "format-icons": ["", "", "", "", ""],
-    "tooltip-format": "{time}"
+    "tooltip-format": "{time}",
+    "on-click": "swaync-client -t"
   },
   "network": {
     "interface": "wlan0",
@@ -72,7 +73,7 @@
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "<span size='13000'>󰖪  </span>未接続",
     "tooltip-format-wifi": "Signal Strength: {signalStrength}%",
-    "on-click": "~/.config/rofi/scripts/rofi-wifi-menu.sh"
+    "on-click": "nm-connection-editor"
   },
   "pulseaudio": {
       "format": "{icon}  {volume}%",
@@ -88,43 +89,26 @@
           "default": ["", "", ""]
       },
       "scroll-step": 1,
-      "on-click": "pavucontrol",
-      "tooltip": false
+      "on-click": "swaync-client -t",
+      "tooltip": false,
+      "on-scroll-up": "~/.config/hypr/scripts/volume.sh --inc",
+      "on-scroll-down": "~/.config/hypr/scripts/volume.sh --dec"
   },
-  "pulseaudio/slider" :{
-    "min": 0, "max": 100, "orientation": "horizontal"
-  },
-  "group/audio": {
-    "orientation" : "horizontal",
-    "modules": [ "pulseaudio", "pulseaudio/slider"],
-    "drawer": {
-      "transition-duration": 400
-    }
-  },
-
+  
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
-    "format-icons": ["", "", ""]
-  },
-  "backlight/slider" :{
-    "min": 0, "max": 100,
-    "orientation": "horizontal",
-    "device": "intel_backlight"
-  },
-  "group/brightness": {
-    "orientation" : "horizontal",
-    "modules": [ "backlight", "backlight/slider"],
-    "drawer": {
-      "transition-duration": 400
-    }
+    "format-icons": ["", "", ""],
+    "on-click": "swaync-client -t",
+    "on-scroll-up": "~/.config/hypr/scripts/backlight.sh --inc",
+    "on-scroll-down": "~/.config/hypr/scripts/backlight.sh --dec"
   },
 
   "custom/bluetooth": {
     "format" :"{}",
     "exec": "/home/david/hypr-config/.config/waybar/scripts/bt-status.sh",
     "interval": 5,
-    "on-click" : "~/.config/rofi/scripts/rofi-bt.sh"
+    "on-click" : "blueman-manager"
   },
   "custom/power": {
     "format": " ",

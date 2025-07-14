@@ -110,7 +110,7 @@ window#waybar {
     border-bottom-right-radius: 12px;
     padding-right: 15px;
     margin-right: 6px;
-    color: @mauve;
+    color: @red;
 }
 
 #pulseaudio-slider{
