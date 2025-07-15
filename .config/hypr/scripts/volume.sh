@@ -44,7 +44,7 @@ inc_volume() {
     if wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q '\[MUTED\]'; then
         wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && notify_user
     fi
-    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && notify_user
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ && notify_user
 }
 
 # Decrease Volume
@@ -52,7 +52,7 @@ dec_volume() {
     if wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q '\[MUTED\]'; then
         wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && notify_user
     fi
-    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && notify_user
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%- && notify_user
 }
 
 # Toggle Mute

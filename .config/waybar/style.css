@@ -75,7 +75,7 @@ window#waybar {
 }
 #workspaces button.urgent {
     color: @base;
-    background: @mauve;
+    background: @red;
 }
 
 #clock{
