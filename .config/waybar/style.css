@@ -103,7 +103,7 @@ window#waybar {
     color: @rosewater;
 }
 #battery{
-    color: @mauve;
+    color: @lavender;
 }
 #custom-power {
     border-top-right-radius: 12px;
