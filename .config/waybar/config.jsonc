@@ -1,8 +1,8 @@
 {
   "position": "top",
-  "modules-left": ["hyprland/window"],
+  "modules-left": ["clock", "hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["clock","network", "custom/bluetooth", "pulseaudio", "backlight","battery", "custom/power"],
+  "modules-right": ["network", "custom/bluetooth", "pulseaudio", "backlight","battery", "custom/power"],
 
   "hyprland/window": {
     "format" : "  {}"
@@ -68,11 +68,11 @@
   },
   "network": {
     "interface": "wlan0",
-    "format-wifi": "<span size='13000'>  </span>{essid}",
+    "format-wifi": "<span size='13000'>  </span>{signalStrength}%",
     "format-ethernet": "<span size='13000'>󰖪  </span> Disconnected",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "<span size='13000'>󰖪  </span>未接続",
-    "tooltip-format-wifi": "Signal Strength: {signalStrength}%",
+    "tooltip-format-wifi": "{essid}",
     "on-click": "nm-connection-editor"
   },
   "pulseaudio": {
@@ -105,7 +105,7 @@
   },
 
   "custom/bluetooth": {
-    "format" :"{}",
+    "return-type": "json",
     "exec": "/home/david/hypr-config/.config/waybar/scripts/bt-status.sh",
     "interval": 5,
     "on-click" : "blueman-manager"

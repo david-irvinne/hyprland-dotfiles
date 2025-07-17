@@ -44,11 +44,11 @@
       "button-text": ""
     },
     "dnd": {
-      "text": "Do Not Disturb"
+      "text": "お休みモード"
     },
     "label": {
       "max-lines": 1,
-      "text": "Notification"
+      "text": "Notifications"
     },
     "mpris": {
       "image-size": 50,
@@ -58,7 +58,7 @@
       "label": " "
     },
     "backlight": {
-      "label": "󰃠 ",
+      "label": " ",
       "device": "intel_backlight"
     },
     "buttons-grid": {

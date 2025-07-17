@@ -80,6 +80,7 @@ window#waybar {
 
 #clock{
     border-radius: 12px;
+    margin-left: 6px;
     margin-right: 6px;
     color: @sky;
 }

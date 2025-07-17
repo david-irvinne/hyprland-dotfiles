@@ -7,10 +7,11 @@ if [[ $powered == "yes" ]]; then
     # Cek apakah ada device yang terhubung
     connected_device=$(bluetoothctl info | grep "Name:" | head -n1 | awk -F ': ' '{print $2}')
     if [[ -n "$connected_device" ]]; then
-        echo -e "󰂴 $connected_device"
+        
+        echo "{\"text\": \"󰂴 オン\", \"tooltip\": \"$connected_device に接続中\"}"
     else
         echo -e "󰂯 オン"
     fi
 else
-    echo -e "󰂲 オフ"
+    echo "{\"text\": \"󰂲 オフ\"}"
 fi
