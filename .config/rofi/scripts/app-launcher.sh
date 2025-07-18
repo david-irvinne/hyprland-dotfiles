@@ -18,7 +18,7 @@ rofi \
     -no-drun-show-actions \
     -terminal kitty \
     -kb-cancel Escape \
-    -theme ~/hypr-config/.config/rofi/config.rasi
+    -theme ~/hypr-config/.config/rofi/application-launcher.rasi
 
 # echo "<NOTICE> $(date +"%Y-%m-%d %H:%M:%S"): Rofi ran successfully - Application Launcher" >> ~/script/rofi/application_launcher.log
 

@@ -10,7 +10,7 @@ if [[ $powered == "yes" ]]; then
         
         echo "{\"text\": \"󰂴 オン\", \"tooltip\": \"$connected_device に接続中\"}"
     else
-        echo -e "󰂯 オン"
+        echo "{\"text\": \"󰂴 オン\", \"tooltip\": \"接続なし\"}"
     fi
 else
     echo "{\"text\": \"󰂲 オフ\"}"

@@ -1,15 +1,16 @@
-// rofi configuration
+
 configuration {
     modi:                        "dmenu";
-    show-icons:                  true;
-    drun-display-format:         "{icon} {name}";
-    font:                        "JetBrainsMono Nerd Font Extra Bold Italic 22";
+    show-icons:                  false;
+    drun-display-format:         "{name}";
+    font:                        "JetBrainsMono Nerd Font Medium 20";
     click-to-exit:               true;
-    display-drun:                " ";
-    disable-history:             false;
+    display-drun:                "󰍉 ";   // Icon pencarian
+    disable-history:             true;
     location:                    0;
     icon-theme:                  "Oranchelo";
 }
+
 
 // Global Properties
 * {
@@ -58,13 +59,14 @@ inputbar {
     background-color:            @input-bg;
     text-color:                  @input-fg;
     children:                    [ "prompt", "entry" ];
+    placeholder:                 "Search files...";
 }
 
 prompt {
     enabled:                     true;
     background-color:            transparent;
     text-color:                  @accent-color;
-    font:                        "JetBrainsMono Nerd Font Extra Bold 18";
+    font:                        "JetBrainsMono Nerd Font Extra Bold 20";
 }
 
 entry {
@@ -72,17 +74,17 @@ entry {
     background-color:            transparent;
     text-color:                  @input-fg;
     cursor:                      text;
-    placeholder:                 "Search applications ...";
+    placeholder:                 "ファイル名を入力...";
     placeholder-color:           rgba(232, 227, 227, 0.4);
-    font:                        "JetBrainsMono Nerd Font Regular 18";
+    font:                        "JetBrainsMono Nerd Font Regular 20";
 }
 
 // Listview
 listview {
     enabled:                     true;
-    columns:                     4;
-    lines:                       3;
-    spacing:                     40px;
+    columns:                     1;
+    lines:                       12;
+    spacing:                     10px;
     padding:                     20px 50px;
     background-color:            @no-color-transparent;
     text-color:                  @main-fg;
@@ -96,12 +98,12 @@ listview {
 // Elements
 element {
     enabled:                     true;
-    padding:                     25px;
-    border-radius:               20px;
+    padding:                     10px 15px;
+    border-radius:               12px;
     background-color:            @no-color-transparent;
     text-color:                  @main-fg;
     cursor:                      pointer;
-    orientation:                 vertical;
+    orientation:                 horizontal;
 }
 
 element normal.normal {
@@ -116,24 +118,21 @@ element alternate.normal {
 element selected.normal {
     background-color:            @select-bg;
     text-color:                  @select-fg;
-    border:                      2px solid;
+    border:                      1px solid;
     border-color:                @accent-color;
 }
 
 element-icon {
-    size:                        150px;
-    border-radius:               15px;
-    background-color:            transparent;
-    margin:                      0px 0px 15px 0px;
+    
 }
 
 element-text {
     vertical-align:              0.5;
-    horizontal-align:            0.5;
-    padding:                     8px 12px;
+    horizontal-align:            0;
+    padding:                     6px 12px;
     background-color:            transparent;
     text-color:                  inherit;
-    font:                        "JetBrainsMono Nerd Font Regular 18";
+    font:                        "JetBrainsMono Nerd Font Regular 20";
 }
 
 // Responsive design for different aspect ratios
