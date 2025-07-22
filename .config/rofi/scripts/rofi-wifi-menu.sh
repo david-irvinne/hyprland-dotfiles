@@ -43,8 +43,8 @@ esac
 # Jika SSID dipilih
 SSID=$(echo "$SSID" | sed -E 's/ \(.*//')  # hapus (%)
 if [ -n "$SSID" ]; then
-  if nmcli connection show | grep -q "$SSID"; then
-    nmcli connection up "$SSID"
+  if nmcli connection show | grep -q "$SSID" --ask; then
+    nmcli connection up "$SSID" --ask
   else
     PASS=$(rofi -dmenu -password -p "Password for $SSID")
     nmcli device wifi connect "$SSID" password "$PASS"

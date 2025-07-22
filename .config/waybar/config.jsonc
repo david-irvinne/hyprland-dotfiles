@@ -24,32 +24,30 @@
        "10": "十"
     }
   },
-  "clock": {
-      
-      "format": "  {:%H:%M}",
-      "format-alt": "{:L%a, %m月 %d日 %Y年 %R}",
-      "tooltip-format": "<span font_desc='WenQuanYi Zen Hei Mono 9'>{calendar}</span>",
+   "clock": {
+      "format": "  {:L%H:%M}",
+      "format-alt": "  {:L%Y年 %m月　%d日 (%A) - %H:%M}",
+      "tooltip-format": "<tt>{calendar}</tt>",
+      "smooth-scrolling-threshold": 0.01,
       "calendar": {
-              "mode"          : "year",
-              "mode-mon-col"  : 3,
-              "weeks-pos"     : "right",
-              "on-scroll"     : 1,
-              "format": {
-                        "months":     "<span color='#ffead3'><b>{}</b></span>",
-                        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                        }
-              },
+          "mode"          : "year",
+          "mode-mon-col"  : 3,
+          "weeks-pos"     : "right",
+          "on-scroll"     : 1,
+          "format": {
+              "months":     "<span color='#ffead3'><b>{}</b></span>",
+              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+          }
+      },
       "actions":  {
-                  "on-click-right": "mode",
-                  "on-click-forward": "tz_up",
-                  "on-click-backward": "tz_down",
-                  "on-scroll-up": "shift_up",
-                  "on-scroll-down": "shift_down"
-                  }
-  },
+              "on-click-right": "mode",
+              "on-scroll-up": "shift_up",
+              "on-scroll-down": "shift_down"
+      }
+    },
   "battery": {
     "states": {
       "warning": 30,
