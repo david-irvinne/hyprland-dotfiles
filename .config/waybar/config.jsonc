@@ -70,7 +70,7 @@
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "<span size='13000'>󰖪  </span>未接続",
     "tooltip-format-wifi": "{essid}",
-    "on-click": "nm-connection-editor"
+    "on-click": " ~/.config/rofi/scripts/rofi-wifi-menu.sh"
   },
   "pulseaudio": {
       "format": "{icon}  {volume}%",
