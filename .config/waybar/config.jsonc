@@ -96,7 +96,7 @@
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
     "format-icons": ["", "", ""],
-    "on-click": "swaync-client -t",
+    "on-click": "swaync-client -t -sw",
     "on-scroll-up": "~/.config/hypr/scripts/backlight.sh --inc",
     "on-scroll-down": "~/.config/hypr/scripts/backlight.sh --dec"
   },
