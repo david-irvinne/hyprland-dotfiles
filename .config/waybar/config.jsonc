@@ -2,7 +2,7 @@
   "position": "top",
   "modules-left": ["clock", "hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["network", "custom/bluetooth", "pulseaudio", "backlight","battery", "custom/power"],
+  "modules-right": ["tray", "network", "custom/bluetooth", "pulseaudio", "backlight","battery", "custom/power"],
 
   "hyprland/window": {
     "format" : "  {}"
@@ -25,7 +25,7 @@
     }
   },
    "clock": {
-      "format": "  {:L%H:%M}",
+      "format": "{:L%H:%M}",
       "format-alt": "  {:L%Y年 %m月　%d日 (%A) - %H:%M}",
       "tooltip-format": "<tt>{calendar}</tt>",
       "smooth-scrolling-threshold": 0.01,
@@ -61,14 +61,20 @@
     "format-full": "<span size='13000'> </span>{capacity}%",
     "format-icons": ["", "", "", "", ""],
     "tooltip-format": "{time}",
-    "on-click": "swaync-client -t"
+    "on-click": "swaync-client -t -sw"
   },
+  "tray": {
+    "spacing": 10,
+    "icon-size": 20,
+    "show-passive-items": true, 
+    "reverse-direction": true, 
+  }, 
   "network": {
     "interface": "wlan0",
-    "format-wifi": "<span size='13000'>  </span>{signalStrength}%",
-    "format-ethernet": "<span size='13000'>󰖪  </span> Disconnected",
+    "format-wifi": "{signalStrength}%",
+    "format-ethernet": "Disconnected",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "<span size='13000'>󰖪  </span>未接続",
+    "format-disconnected": "未接続",
     "tooltip-format-wifi": "{essid}",
     "on-click": " ~/.config/rofi/scripts/rofi-wifi-menu.sh"
   },
@@ -86,8 +92,7 @@
           "default": ["", "", ""]
       },
       "scroll-step": 1,
-      "on-click": "swaync-client -t",
-      "tooltip": false,
+      "on-click": "swaync-client -t -sw",
       "on-scroll-up": "~/.config/hypr/scripts/volume.sh --inc",
       "on-scroll-down": "~/.config/hypr/scripts/volume.sh --dec"
   },
@@ -108,7 +113,7 @@
     "on-click" : "blueman-manager"
   },
   "custom/power": {
-    "format": " ",
+    "format": "",
     "on-click": "wlogout",    
     "tooltip": false
   }

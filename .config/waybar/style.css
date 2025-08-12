@@ -33,6 +33,7 @@ window#waybar {
 #workspaces,
 #window,
 #clock,
+#tray,
 #network,
 #custom-bluetooth,
 #pulseaudio, 
@@ -43,10 +44,10 @@ window#waybar {
 #backlight-slider,
 #backlight{
     background: @base;
-    margin-top: 6px;
+    margin-top: 4px;
     margin-bottom: 3px;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
     padding-top: 2px;
     padding-bottom: 2px;
 }
@@ -84,10 +85,18 @@ window#waybar {
     margin-right: 6px;
     color: @sky;
 }
-#network{
+#tray{
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
-    color: @sapphire;
+    padding-right: 1px;
+}
+#tray > widget:hover {
+	background: @surface0;
+}
+
+#network{
+    color: @text;
+    padding-left: 2px;
 }
 #custom-bluetooth{
     border-top-right-radius: 12px;
@@ -164,3 +173,11 @@ window#waybar {
     border:none;
 }
 
+#network:hover,
+#custom-bluetooth:hover, 
+#pulseaudio:hover,
+#backlight:hover,
+#battery:hover,
+#custom-power:hover {
+  background: @surface0;
+}
