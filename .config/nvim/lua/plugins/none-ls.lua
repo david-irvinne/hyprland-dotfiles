@@ -11,6 +11,11 @@ return {
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.clang_format,
+
+        -- cpplint bego jir
+        --require("none-ls.diagnostics.cpplint"),
+
+        -- eslint baca semuanya jadi error :(
         --require("none-ls.diagnostics.eslint_d")
       },
     })

@@ -19,22 +19,34 @@ return {
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require("lspconfig")
-      
+
       lspconfig.lua_ls.setup({
-        capabilities = capabilities 
+        capabilities = capabilities
       })
       lspconfig.ts_ls.setup({
-        capabilities = capabilities 
+        capabilities = capabilities
       })
       lspconfig.clangd.setup({
-        capabilities = capabilities 
+        capabilities = capabilities,
+        cmd = {
+          "clangd",
+          "--clang-tidy=false",      -- Matikan clang-tidy
+          "--completion-style=detailed",
+          "--header-insertion=iwyu", -- Include what you use (bisa dimatikan kalau mau)
+          "--all-scopes-completion",
+        },
+        init_options = {
+          clangdFileStatus = true,
+          fallbackFlags = { "-Wall", "-Wextra", "-Wpedantic", "-Wshadow" }, -- Warning bawaan compiler
+        }
       })
 
       vim.diagnostic.config({
-        float = { 
-          border = "rounded",
-          source = "always"
-        }
+        virtual_text = { spacing = 2, prefix = "●" },
+        signs = true,
+        update_in_insert = false,
+        severity_sort = true,
+        float = { border = "rounded", source = "always" }
       })
 
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
