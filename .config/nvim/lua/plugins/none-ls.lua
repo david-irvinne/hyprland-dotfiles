@@ -9,7 +9,9 @@ return {
     null_ls.setup({
       sources = {
         null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.prettier.with({
+          filetypes = { "css", "scss", "javascript", "typescript", "javascriptreact", "typescriptreact" }
+        }),
         null_ls.builtins.formatting.clang_format,
 
         -- cpplint bego jir

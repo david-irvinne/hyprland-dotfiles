@@ -10,7 +10,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = {"lua_ls", "ts_ls", "clangd"}
+        ensure_installed = {"lua_ls", "ts_ls", "clangd", "html", "tailwindcss", "jsonls", "cssls"}
       })
     end
   },
@@ -20,12 +20,30 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require("lspconfig")
 
+      -- HTML
+      lspconfig.html.setup({ capabilities = capabilities })
+      -- JSON
+      lspconfig.jsonls.setup({ capabilities = capabilities })
       lspconfig.lua_ls.setup({
         capabilities = capabilities
       })
+            -- TypeScript
       lspconfig.ts_ls.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
+        on_attach = function(client)
+          client.server_capabilities.document_formatting = false -- Disable ts_ls formatting (use prettier instead)
+        end,
       })
+
+      -- CSS
+      lspconfig.cssls.setup({
+        capabilities = capabilities,
+        on_attach = function(client)
+          client.server_capabilities.document_formatting = false -- Disable cssls formatting
+        end,
+      })
+
+      -- C++
       lspconfig.clangd.setup({
         capabilities = capabilities,
         cmd = {
@@ -38,7 +56,12 @@ return {
         init_options = {
           clangdFileStatus = true,
           fallbackFlags = { "-Wall", "-Wextra", "-Wpedantic", "-Wshadow" }, -- Warning bawaan compiler
-        }
+        },
+        root_dir = lspconfig.util.root_pattern(
+          "compile_commands.json",
+          "compile_flags.txt",
+          ".git"
+        )
       })
 
       vim.diagnostic.config({
