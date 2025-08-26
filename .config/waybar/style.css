@@ -1,7 +1,7 @@
 @import "/home/david/hypr-config/.config/colors/mocha.css"; 
 
 * {
-    font-family: "CaskaydiaCove NF Light";
+    font-family: "CaskaydiaCove NF ExtraLight";
     font-size: 13px;
     min-height: 0;
     font-weight: bold; 
@@ -32,7 +32,7 @@ window#waybar {
 
 #workspaces,
 #window,
-#clock,
+#time,
 #tray,
 #network,
 #custom-bluetooth,
@@ -82,15 +82,25 @@ window#waybar {
     background: @red;
 }
 
+#time {
+  margin-left: 6px;
+  border-radius: 24px;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 24px;
+}
 #clock{
-    border-top-right-radius: 12px;
-    border-top-left-radius: 24px; 
-    border-bottom-right-radius: 24px;
-    border-bottom-left-radius: 12px;
-    margin-left: 6px;
-    margin-right: 6px;
     color: @sky;
 }
+#custom-date{
+  color: @sky;
+  padding-left: 8px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 24px;
+}
+
+
 #tray{
     border-top-left-radius: 12px;
     border-bottom-left-radius: 24px;
@@ -117,6 +127,8 @@ window#waybar {
 }
 #backlight {
     color: @rosewater;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 #battery{
     color: @lavender;
