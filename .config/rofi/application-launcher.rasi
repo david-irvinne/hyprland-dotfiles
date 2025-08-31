@@ -14,14 +14,14 @@ configuration {
 * {
     main-bg:                     rgba(25, 25, 35, 0.95);
     main-fg:                     #e8e3e3;
-    select-bg:                   rgba(109, 75, 189, 0.6);
+    select-bg:                   rgba(109, 75, 189, 0.5);
     select-fg:                   #ffffff;
     input-bg:                    rgba(35, 35, 45, 0.95);
     input-fg:                    #e8e3e3;
     input-border:                rgba(142, 89, 201, 0.8);
     accent-color:                #8E59C9;
     no-color-transparent:        rgba(0, 0, 0, 0);
-    backdrop:                    rgba(0, 0, 0, 0.7);
+    backdrop:                    rgba(0, 0, 0, 0.5);
 }
 
 // Window Styles

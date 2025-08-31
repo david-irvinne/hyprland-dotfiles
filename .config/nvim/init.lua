@@ -19,5 +19,5 @@ vim.opt.winborder = "rounded"
 require("vim-options")
 require("lazy").setup("plugins")
 
-
-
+-- F5: Compile file C++ jadi binary, tanpa eksekusi
+vim.keymap.set("n", "<F5>", ":w<CR>:!g++ -std=c++20 -DDEBUG -Wall -Wshadow -Wextra % -o %:r<CR>", { noremap = true, silent = false })
