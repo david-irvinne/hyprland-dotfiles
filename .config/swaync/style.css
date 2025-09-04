@@ -6,14 +6,16 @@
 
 /* Colors */
 @define-color background              #1e1e2e;
-@define-color background-alt          #585b70;
+@define-color background-alt          #6c7086;
 @define-color background-alt-darker   #313244;
 @define-color accent-normal           #89b4fa;
-@define-color accent-error            #d20f39;
+@define-color accent-error            #f38ba8;
 @define-color bordercolor             #b4befe;
-@define-color fontcolor               #a6adc8;
-@define-color fontaltcolor            #cdd6f4;
+@define-color fontcolor               #cdd6f4;
+@define-color fontaltcolor            #f5e0dc;
 @define-color toggledOn               #89b4fa;
+@define-color yellow                  #f9e2af;
+@define-color lavender                #b4befe;
 
 
 /* Config */
@@ -55,7 +57,7 @@
 
 .close-button {
   background-color: @accent-error;
-  color: @fontaltcolor;
+  color: @background;
   margin-top: 5px;
   margin-right: 5px;
   border-radius: 12px;
@@ -89,7 +91,7 @@
 /* Notifications expanded-group */
 
 .notification-group {
-  margin: 2px 8px 2px 8px;
+  margin: 2px 2px 2px 2px;
   font-size: 14px;
 
 }
@@ -105,7 +107,7 @@
 .notification-group-collapse-button,
 .notification-group-close-all-button {
   background: @accent-normal;
-  color: @fontaltcolor;
+  color: @background;
   margin: 4px; 
   border-radius: 12px;
   padding: 4px;
@@ -114,7 +116,7 @@
 .notification-group-collapse-button:hover,
 .notification-group-close-all-button:hover {
   background: @accent-error;
-  color: @fontaltcolor;
+  color: @background;
 }  
 
 
@@ -161,7 +163,7 @@ button {
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
-    color: @fontaltcolor;
+    color: @background-alt-darker;
 }
 
 
@@ -191,21 +193,20 @@ button {
 
 .widget-volume {
   background: @background-alt-darker;
-  color: @fontcolor;
+  color: @lavender;
   font-size: x-large;
 }
 
 
 .widget-backlight {
   background: @background-alt-darker;
-  color: @fontcolor;
+  color: @yellow;
   font-size: x-large;
 }
 
 /* music player widget */
 .widget-mpris {
   background: transparent;
-  margin: 8px;
 }
 
 .widget-mpris button {
@@ -223,13 +224,24 @@ button {
 
 trough slider {
     background: @fontcolor;
+    border-radius: 4px;
 }
-
-trough slider:hover {
-    background: @accent-normal;
-}
-
 
 trough highlight {
-  background: @accent-normal;
+  min-height: 4px;   
+  border-radius: 4px;
+}
+
+.widget-volume trough highlight {
+  background: @lavender;     /* progress backlight */
+}
+.widget-volume trough slider:hover {
+  background: @lavender;  
+}
+
+.widget-backlight trough highlight {
+  background: @yellow;     /* progress backlight */
+}
+.widget-backlight trough slider:hover {
+  background: @yellow;  
 }
