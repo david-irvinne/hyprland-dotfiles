@@ -10,7 +10,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = {"lua_ls", "ts_ls", "clangd", "html", "tailwindcss", "jsonls", "cssls"}
+        ensure_installed = {"lua_ls", "ts_ls", "clangd", "html", "tailwindcss", "jsonls", "cssls", "gopls"}
       })
     end
   },
@@ -62,6 +62,32 @@ return {
           "compile_flags.txt",
           ".git"
         )
+      })
+
+      -- Golang
+      lspconfig.gopls.setup({
+        capabilities = capabilities,
+
+        on_attach = function(client, bufnr)
+          -- kalau mau matiin format bawaannya, uncomment ini:
+          -- client.server_capabilities.document_formatting = false
+          -- biar bisa pakai goimports/null-ls
+
+          local opts = { buffer = bufnr, silent = true }
+          vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, opts)
+          vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition, opts)
+        end,
+
+        settings = {
+          gopls = {
+            gofumpt = true, -- auto format dengan gofumpt
+            analyses = {
+              unusedparams = true,
+              shadow = true,
+            },
+            staticcheck = true,
+          },
+        },
       })
 
       vim.diagnostic.config({

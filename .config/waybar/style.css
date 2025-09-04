@@ -141,61 +141,12 @@ window#waybar {
     color: @red;
 }
 
-#pulseaudio-slider{
-    background: @base;
-    border:none;
-}
-#pulseaudio-slider slider {
-    min-height: 0px;
-    min-width: 0px;
-    opacity: 0;
-    background: @blue;
-    border:none;
-}
-#pulseaudio-slider trough {
-    min-height: 10px;
-    min-width: 100px;
-    border-radius: 5px;
-    background-color: @overlay0;
-    border:none;
-}
-#pulseaudio-slider highlight {
-    min-width: 10px;
-    border-radius: 5px;
-    background-color: @lavender;
-    border:none;
-}
-
-#backlight-slider {
-    background: @base;
-    border: none;
-}
-#backlight-slider slider {
-    min-height: 0px;
-    min-width: 0px;
-    opacity: 0;
-    background: @yellow;
-    border:none;
-}
-#backlight-slider trough {
-    min-height: 10px;
-    min-width: 100px;
-    border-radius: 5px;
-    background-color: @overlay0;
-    border:none;
-}
-#backlight-slider highlight {
-    min-width: 10px;
-    border-radius: 5px;
-    background-color: @rosewater;
-    border:none;
-}
-
 #network:hover,
 #custom-bluetooth:hover, 
 #pulseaudio:hover,
 #backlight:hover,
 #battery:hover,
+#clock:hover,
 #custom-power:hover {
   background: @surface0;
 }

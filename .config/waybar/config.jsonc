@@ -78,7 +78,7 @@
     "spacing": 10,
     "icon-size": 20,
     "show-passive-items": true, 
-    "reverse-direction": true, 
+    "reverse-direction": true 
   }, 
   "network": {
     "interface": "wlan0",

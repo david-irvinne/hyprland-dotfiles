@@ -10,9 +10,10 @@
 @define-color background-alt-darker   #313244;
 @define-color accent-normal           #89b4fa;
 @define-color accent-error            #d20f39;
-@define-color bordercolor             #cba6f7;
+@define-color bordercolor             #b4befe;
 @define-color fontcolor               #a6adc8;
-@define-color fontaltcolor            #bac2de;
+@define-color fontaltcolor            #cdd6f4;
+@define-color toggledOn               #89b4fa;
 
 
 /* Config */
@@ -82,6 +83,7 @@
     color: @fontcolor;
     border: 2px solid @bordercolor;
     padding: 10px;
+    border-radius: 0px;
 }
 
 /* Notifications expanded-group */
@@ -155,7 +157,7 @@ button {
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
-  background: @background;
+  background: @toggledOn;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
