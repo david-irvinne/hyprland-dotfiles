@@ -15,9 +15,9 @@ button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20%;
-    border-radius: 54px;
+    border-radius: 25px;
     border:transparent;
-    background-color: rgba(136, 57, 239, 0.1);
+    background-color: rgba(136, 57, 239, 0.2);
     margin: 10px;
 }
 

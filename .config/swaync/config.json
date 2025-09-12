@@ -8,7 +8,7 @@
   "cssPriority": "user",
   "control-center-margin-top": 1,
   "control-center-margin-bottom": 1,
-  "control-center-margin-right": 2,
+  "control-center-margin-right": 1,
   "control-center-margin-left": 0,
   "notification-2fa-action": true,
   "notification-inline-replies": true,
@@ -77,23 +77,11 @@
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && pactl set-source-mute @DEFAULT_SOURCE@ 1 || pactl set-source-mute @DEFAULT_SOURCE@ 0'",
           "update-command": "sh -c '[[ $(pactl get-source-mute @DEFAULT_SOURCE@) == *yes* ]] && echo true || echo false'"
         },
-        {
-          "label": " ",
-          "command": "nm-connection-editor"
-        },
-        {
-          "label": "󰂯",
-          "command": "blueman-manager"
-        },
 
         {
           "label":"󰀝",
           "command": "bash -c $HOME/.config/hypr/scripts/airplaneMode.sh",
           "type": "toggle"
-        },
-        {
-          "label":"󰤆",
-          "command": "wlogout"
         },
 
         {
