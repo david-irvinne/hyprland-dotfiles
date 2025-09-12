@@ -19,12 +19,12 @@ https://github.com/user-attachments/assets/9a1fc7c2-45cd-4f00-810a-2a0fd4bffee0
 Works on EndeavourOS (Arch Linux based)
 
 ## some screenshots :)
-[Swaync](assets/swaync.png)
+![Swaync](assets/swaync.png)
 
-[Neovim](assets/neovim.png)
+![Neovim](assets/neovim.png)
 
-[Cmatrix, Btop, and Gurafetch](assets/btop.png)
+![Cmatrix, Btop, and Gurafetch](assets/btop.png)
 
-[Rofi](assets/rofi.png)
+![Rofi](assets/rofi.png)
 
 
