@@ -2,26 +2,25 @@ configuration {
     modi:                        "dmenu";
     show-icons:                  true;
     drun-display-format:         "{icon} {name}";
-    font:                        "JetBrainsMono Nerd Font Extra Bold Italic 22";
+    font:                        "JetBrainsMono Nerd Font Extra Bold Italic 12";
     click-to-exit:               true;
     display-drun:                " ";
     disable-history:             false;
     location:                    0;
-    icon-theme:                  "Oranchelo";
 }
 
 // Global Properties
 * {
     main-bg:                     rgba(25, 25, 35, 0.95);
     main-fg:                     #e8e3e3;
-    select-bg:                   rgba(109, 75, 189, 0.5);
+    select-bg:                   rgba(109, 75, 189, 0.4);
     select-fg:                   #ffffff;
-    input-bg:                    rgba(35, 35, 45, 0.95);
+    input-bg:                    rgba(35, 35, 45, 0.5);
     input-fg:                    #e8e3e3;
-    input-border:                rgba(142, 89, 201, 0.8);
+    input-border:                rgb(142, 89, 201);
     accent-color:                #8E59C9;
     no-color-transparent:        rgba(0, 0, 0, 0);
-    backdrop:                    rgba(0, 0, 0, 0.5);
+    backdrop:                    rgba(0, 0, 0, 0.8);
 }
 
 // Window Styles
@@ -33,14 +32,13 @@ window {
     padding:                     10% 15%;
     border-color:                transparent;
     background-color:            @backdrop;
-    transparency:                "real";
 }
 
 // Main Box
 mainbox {
     enabled:                     true;
     children:                    ["inputbar", "listview"];
-    spacing:                     80px;
+    spacing:                     40px;
     padding:                     0px;
     background-color:            @no-color-transparent;
 }
@@ -48,11 +46,11 @@ mainbox {
 // Input Bar
 inputbar {
     enabled:                     true;
-    spacing:                     10px;
-    padding:                     15px;
-    margin:                      0px 150px;
+    spacing:                     5px;
+    padding:                     10px;
+    margin:                      0px 120px;
     border:                      2px solid;
-    border-radius:               25px;
+    border-radius:               15px;
     border-color:                @input-border;
     background-color:            @input-bg;
     text-color:                  @input-fg;
@@ -63,7 +61,7 @@ prompt {
     enabled:                     true;
     background-color:            transparent;
     text-color:                  @accent-color;
-    font:                        "JetBrainsMono Nerd Font Extra Bold 18";
+    font:                        "JetBrainsMono Nerd Font Extra Bold 12";
 }
 
 entry {
@@ -73,16 +71,16 @@ entry {
     cursor:                      text;
     placeholder:                 "ファイル名を入力...";
     placeholder-color:           rgba(232, 227, 227, 0.4);
-    font:                        "JetBrainsMono Nerd Font Regular 18";
+    font:                        "JetBrainsMono Nerd Font Regular 12";
 }
 
 // Listview
 listview {
     enabled:                     true;
     columns:                     4;
-    lines:                       3;
-    spacing:                     40px;
-    padding:                     20px 50px;
+    lines:                       4;
+    spacing:                     5px;
+    padding:                     5px 10px;
     background-color:            @no-color-transparent;
     text-color:                  @main-fg;
     cycle:                       true;
@@ -95,8 +93,8 @@ listview {
 // Elements
 element {
     enabled:                     true;
-    padding:                     25px;
-    border-radius:               20px;
+    padding:                     16px;
+    border-radius:               15px;
     background-color:            @no-color-transparent;
     text-color:                  @main-fg;
     cursor:                      pointer;
@@ -120,50 +118,18 @@ element selected.normal {
 }
 
 element-icon {
-    size:                        150px;
+    size:                        72px;
     border-radius:               15px;
     background-color:            transparent;
-    margin:                      0px 0px 15px 0px;
+    margin:                      0px 0px 0px 0px;
 }
 
 element-text {
     vertical-align:              0.5;
     horizontal-align:            0.5;
-    padding:                     8px 12px;
+    padding:                     20px 0px 0px 0px;
     background-color:            transparent;
     text-color:                  inherit;
-    font:                        "JetBrainsMono Nerd Font Regular 18";
+    font:                        "JetBrainsMono Nerd Font Regular 12";
 }
 
-// Responsive design for different aspect ratios
-@media(max-aspect-ratio: 1.6) {
-    listview {
-        columns:                 3;
-        lines:                   4;
-        spacing:                 35px;
-    }
-    
-    inputbar {
-        margin:                  0px 150px;
-    }
-    
-    element-icon {
-        size:                    100px;
-    }
-}
-
-@media(max-aspect-ratio: 1.2) {
-    listview {
-        columns:                 3;
-        lines:                   4;
-        spacing:                 30px;
-    }
-    
-    inputbar {
-        margin:                  0px 100px;
-    }
-    
-    element-icon {
-        size:                    90px;
-    }
-}
