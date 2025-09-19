@@ -21,6 +21,9 @@ return {
             ".git",
           },
         },
+        mappings = {
+          ["H"] = "toggle_hidden",
+        },
       },
     })
     vim.keymap.set("n", "<c-n>", ":Neotree filesystem reveal left<cr>", {})
