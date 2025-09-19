@@ -16,6 +16,17 @@ return  {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown{}
           }
+        },
+        pickers = {
+          find_files = {
+            hidden = true,
+            no_ignore = true,
+          },
+          live_grep = {
+            additional_args = function()
+              return { "--hidden" }
+            end,
+          },
         }
       })
       require("telescope").load_extension("ui-select")

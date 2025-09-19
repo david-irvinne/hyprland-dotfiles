@@ -20,9 +20,9 @@ require("vim-options")
 require("lazy").setup("plugins")
 
 -- F5: Compile file C++ jadi binary, tanpa eksekusi
-vim.keymap.set("n", "<F5>", ":w<CR>:!g++ -std=c++20 -DDEBUG -Wall -Wshadow -Wextra % -o %:r<CR>", { noremap = true, silent = false })
+vim.keymap.set("n", "<F5>", ":w<CR>:!g++ -std=c++20 -DDEBUG -Wall -Wshadow -Wextra '%' -o '%:r'<CR>", { noremap = true, silent = false })
 -- F6: Execute binary dari C++
-vim.keymap.set("n", "<F6>", ":w<CR>:terminal ./%:r<CR>", { noremap = true, silent = false })
+vim.keymap.set("n", "<F6>", ":w<CR>:terminal ./'%:.:r'<CR>", { noremap = true, silent = false })
 
 -- exit terminal job mode
 vim.api.nvim_set_keymap("t", "<Esc>", [[<C-\><C-n>]], { noremap = true })
