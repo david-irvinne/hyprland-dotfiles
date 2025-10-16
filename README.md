@@ -7,7 +7,7 @@ https://github.com/user-attachments/assets/9a1fc7c2-45cd-4f00-810a-2a0fd4bffee0
 - App launcher: rofi
 - Lockscreen: hyprlock 
 - Idle management: hypridle
-- Wallpaper: hyprpaper
+- Wallpaper: swww (for gif) or hyprpaper (for static)
 - Fonts: CaskaydiaCove, Nerd, AwesomeFont
 - Notifications: swaync
 - Network manager: nm-applet
