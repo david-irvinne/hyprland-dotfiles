@@ -85,7 +85,7 @@
     color: @fontcolor;
     border: 2px solid @bordercolor;
     padding: 10px;
-    border-radius: 0px;
+    border-radius: 15px;
 }
 
 /* Notifications expanded-group */
