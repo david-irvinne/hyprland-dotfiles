@@ -2,17 +2,26 @@
 
 DIR="$HOME/hypr-config/.config/wallpaper/gifs"
 if [ ! -d "$DIR" ]; then
-  echo "❌ GIF wallpaper directory not found: $DIR"
+  notify-send "❌ Wallpaper Error" "Directory not found:\n$DIR" --urgency=critical --app-name="SWWW"
   exit 1
 fi
 
 FILE=$(find "$DIR" -type f -iname "*.gif" | shuf -n 1)
 
 if [ -z "$FILE" ]; then
-  echo "❌ no file GIF found at $DIR"
+  notify-send "❌ No GIF Found" "No GIF file located in:\n$DIR" --urgency=critical --app-name="SWWW"
   exit 1
 fi
 
-echo "🎞️  changing wallpaper to gif: $FILE"
-swww img "$FILE" --transition-type wipe --resize crop
+TRANS="wipe"
+RESIZE="crop"
 
+notify-send \
+  "🎞️  New Wallpaper Applied!" \
+  "🖼️ File: $(basename "$FILE")\n🔁 Transition: $TRANS\n📐 Resize: $RESIZE" \
+  --icon=preferences-desktop-wallpaper \
+  --app-name="SWWW Wallpaper" \
+  --urgency=normal
+
+# Terapkan wallpaper
+swww img "$FILE" --transition-type "$TRANS" --resize "$RESIZE"
