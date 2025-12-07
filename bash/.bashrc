@@ -42,8 +42,17 @@ rs(){
 	cp ~/comprog/template.cpp $1.cpp
 }
 
+# battery health check
 batlyfe(){
 	upower -i /org/freedesktop/UPower/devices/battery_BAT1
+}
+
+# open file manager
+open() {
+    # if no argument passed, use current location
+    local target="${1:-.}"
+    
+    GTK_USE_PORTAL=0 nautilus "$target" &>/dev/null & disown
 }
 
 # android studio

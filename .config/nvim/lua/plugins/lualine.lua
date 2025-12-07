@@ -16,6 +16,9 @@ return {
         lualine_y = {},
         lualine_z = { "tabs" }, -- Menampilkan tab Neovim (opsional)
       },
+      sections = {
+        lualine_b = { "branch", "diff", "diagnostics" },
+      }
     })
   end,
 }
