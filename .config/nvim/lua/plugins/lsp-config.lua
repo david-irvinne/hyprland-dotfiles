@@ -10,7 +10,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = {"lua_ls", "ts_ls", "clangd", "html", "tailwindcss", "jsonls", "cssls", "gopls"}
+        ensure_installed = {"lua_ls", "ts_ls", "clangd", "html", "tailwindcss", "jsonls", "cssls", "gopls", "rust_analyzer"}
       })
     end
   },
@@ -106,6 +106,22 @@ return {
           },
         },
       }
+    -- Rust
+      vim.lsp.config.rust_analyzer = {
+        capabilities = capabilities,
+        cmd = { "rust-analyzer" },
+        filetypes = { "rust" },
+        root_markers = { "Cargo.toml", ".git" },
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = { allFeatures = true },
+            check = {
+              command = "clippy"
+            }
+          }
+        }
+      }
+
       -- Enable LSP servers
       vim.lsp.enable('html')
       vim.lsp.enable('jsonls')
@@ -115,6 +131,8 @@ return {
       vim.lsp.enable('tailwindcss')
       vim.lsp.enable('clangd')
       vim.lsp.enable('gopls')
+      vim.lsp.enable('rust_analyzer')
+
       -- Diagnostic configuration
       vim.diagnostic.config({
         virtual_text = { spacing = 2, prefix = "●" },
