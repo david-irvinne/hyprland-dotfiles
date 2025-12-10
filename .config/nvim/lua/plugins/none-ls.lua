@@ -31,6 +31,11 @@ return {
 
         -- eslint baca semuanya jadi error :(
         --require("none-ls.diagnostics.eslint_d")
+
+        -- Rust
+        -- null_ls.builtins.diagnostics.clippy,
+        -- null_ls.builtins.formatting.rustfmt,
+
       },
     })
     vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
