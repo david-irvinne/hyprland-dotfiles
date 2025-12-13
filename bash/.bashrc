@@ -11,14 +11,6 @@ PS1='[\u@\h \W]\$ '
 
 eval "$(starship init bash)"
 
-# kitty terminal background opacity option
-if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
-    ln -sf ~/hypr-config/.config/kitty/kitty-gnome.conf ~/hypr-config/.config/kitty/kitty.conf
-else
-    ln -sf ~/hypr-config/.config/kitty/kitty-hyprland.conf ~/hypr-config/.config/kitty/kitty.conf
-fi
-
-
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
