@@ -60,8 +60,7 @@ export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator 
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools 
-export QT_QPA_PLATFORM=xcb 
-
+# export QT_QPA_PLATFORM=xcb 
 
 # air for live refresh in go webdev
 export PATH=$PATH:$(go env GOPATH)/bin
