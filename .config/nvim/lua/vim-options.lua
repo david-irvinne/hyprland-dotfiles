@@ -7,6 +7,10 @@ vim.cmd("set relativenumber")
 vim.cmd("set clipboard+=unnamedplus")
 vim.g.mapleader = " "
 
+-- highlight baris yang aktif, tapi nomor baris nya aja
+vim.o.cursorline = true
+vim.o.cursorlineopt = "number"
+
 -- hapus comment continuation setelah tekan enter
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
