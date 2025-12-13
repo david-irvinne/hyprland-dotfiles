@@ -88,7 +88,7 @@
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "未接続",
     "tooltip-format-wifi": "{essid}",
-    "on-click": " ~/.config/rofi/scripts/rofi-wifi-menu.sh"
+    "on-click": " ~/.config/waybar/scripts/wifi-scan.sh"
   },
   "pulseaudio": {
       "format": "{icon}  {volume}%",
