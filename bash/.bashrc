@@ -67,3 +67,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# cargo from rust
+export PATH="$HOME/.cargo/bin:$PATH"
