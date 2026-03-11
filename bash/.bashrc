@@ -23,15 +23,23 @@ alias gurafetch='neofetch --source ~/Downloads/ascii/gura2.txt'
 
 # compile c++ script
 cc(){
-	g++ -o $1 $1.cpp -DDEBUG -Wall -Wshadow -Wextra -std=c++20
+	g++ -o $1 $1.cpp -DDEBUG -Wall -Wshadow -Wextra -std=c++23
 }
 # compile and run c++ script
 cr(){
-	g++ -o $1 $1.cpp -DDEBUG -Wall -Wshadow -Wextra -std=c++20
-	./$1
+    g++ -o $1 $1.cpp -DDEBUG -Wall -Wshadow -Wextra -std=c++23 &&
+    echo "compiled successfully!" &&
+    ./$1
 }
+# reset file from template
 rs(){
-	cp ~/comprog/template.cpp $1.cpp
+    cp ~/comprog/template.cpp $1.cpp
+    tmp=$(mktemp)
+
+    echo "// created at: $(date '+%Y-%m-%d %H:%M:%S')" > "$tmp"
+    cat "$1.cpp" >> "$tmp"
+
+    mv "$tmp" "$1.cpp"
 }
 
 # battery health check
