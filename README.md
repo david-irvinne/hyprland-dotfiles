@@ -1,20 +1,20 @@
-# Personal Hyprland dotfiles configuration
+# hyprland dotfiles config
 https://github.com/user-attachments/assets/9a1fc7c2-45cd-4f00-810a-2a0fd4bffee0
 
 ## dependencies list
-- Window tiling manager: hyprland 
-- Top bar: waybar
-- App launcher: rofi
-- Lockscreen: hyprlock 
-- Idle management: hypridle
-- Wallpaper: swww (for gif) or hyprpaper (for static)
-- Fonts: CaskaydiaCove, Nerd, AwesomeFont
-- Notifications: swaync
-- Network manager: nm-applet
-- Bluetooth manager: blueman-manager
-- File search: fd
-- Logout menu: wlogout
-- Color theme (optional): Catppuccin Mocha
+- window tiling manager: hyprland 
+- status bar: waybar
+- app launcher: rofi
+- lockscreen: hyprlock 
+- idle management: hypridle
+- wallpaper: swww (for gif) or hyprpaper (for static)
+- fonts: CaskaydiaCove, Nerd, AwesomeFont
+- notifications: swaync
+- network manager: nm-applet
+- bluetooth manager: blueman-manager
+- file search: fd
+- logout menu: wlogout
+- color theme (optional): Catppuccin Mocha
 - XDG Desktop Portal: xdg-desktop-portal, xdg-desktop-portal-hyprland, xdg-desktop-portal-gtk
 
 Works on EndeavourOS (Arch Linux based)
@@ -39,5 +39,4 @@ hypr-config/
 ![Cmatrix, Btop, and Gurafetch](assets/btop.png)
 
 ![Rofi](assets/rofi.png)
-
 
