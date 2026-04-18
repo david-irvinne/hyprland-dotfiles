@@ -2,7 +2,7 @@
   "position": "top",
   "modules-left": ["group/time", "hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["tray", "network", "custom/bluetooth", "pulseaudio", "backlight","battery", "custom/power"],
+  "modules-right": ["custom/cava", "tray", "network", "custom/bluetooth", "pulseaudio", "backlight","battery", "custom/power"],
 
   "hyprland/window": {
     "format" : "  {}"
@@ -81,6 +81,17 @@
     "show-passive-items": true, 
     "reverse-direction": true 
   }, 
+  "cava": {
+    "framerate": 30,
+    "autosens": 1,
+    "sensitivity": 100,
+    "bars": 14
+  },
+  "custom/cava": {
+    "exec": "cava -p ~/.config/cava/config",
+    "format": "{}",
+    "tail": true
+  },
   "network": {
     "interface": "wlan0",
     "format-wifi": "{signalStrength}%",
