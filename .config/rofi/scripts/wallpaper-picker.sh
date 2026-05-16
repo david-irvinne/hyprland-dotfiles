@@ -8,9 +8,8 @@ DIR="$HOME/hypr-config/.config/wallpaper/"
 CACHE_DIR="$HOME/.cache/wallpaper-picker/thumbs"
 RASI="$HOME/.config/rofi/wallpaper-picker.rasi"
 
-# Ukuran thumbnail 16:10
-THUMB_W=320
-THUMB_H=200
+THUMB_H=320
+THUMB_W=200
 
 # ── check directory ────────────────────────────────────────────
 if [ ! -d "$DIR" ]; then
@@ -21,7 +20,6 @@ fi
 
 mkdir -p "$CACHE_DIR"
 
-# ── Generate thumbnail 16:10 for every format ────────────────
 # Cache is saved so it wont always be regenerated  
 get_icon() {
   local file="$1"
@@ -32,14 +30,12 @@ get_icon() {
 
   if [ ! -f "$thumb" ]; then
     if [[ "$ext" == *.gif ]]; then
-      # take first frame from GIF then resize to 16:10
       convert "${file}[0]" \
         -thumbnail "${THUMB_W}x${THUMB_H}^" \
         -gravity center \
         -extent "${THUMB_W}x${THUMB_H}" \
         "$thumb" 2>/dev/null
     else
-      # PNG, JPG, WEBP — langsung resize ke 16:10
       convert "$file" \
         -thumbnail "${THUMB_W}x${THUMB_H}^" \
         -gravity center \
@@ -95,7 +91,7 @@ done
 
 [ -z "$SELECTED_FILE" ] && exit 1
 
-# ── Terapkan wallpaper via swww ────────────────────────────────
+# ── apply wallpaper via swww ────────────────────────────────
 swww img "$SELECTED_FILE" \
   --transition-type random \
   --transition-duration 2 \
