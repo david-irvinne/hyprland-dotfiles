@@ -45,4 +45,10 @@ vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", { silent = true })
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { silent = true })
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { silent = true })
 
+-- lazygit
+vim.keymap.set("n", "<leader>gg", function()
+  vim.cmd("tabnew")
+  vim.cmd("terminal lazygit")
+  vim.cmd("startinsert")
+end)
 
