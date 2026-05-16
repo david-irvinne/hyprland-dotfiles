@@ -21,13 +21,15 @@ export SDL_IM_MODULE=fcitx
 # neofetch
 alias gurafetch='neofetch --source ~/Downloads/ascii/gura2.txt'
 
+gurafetch
+
 # compile c++ script
 cc(){
-	g++ -o $1 $1.cpp -DDEBUG -Wall -Wshadow -Wextra -std=c++23
+    clang++ $1.cpp -o $1 -Wall -Wextra -Wshadow -D_GLIBCXX_DEBUG
 }
 # compile and run c++ script
 cr(){
-    g++ -o $1 $1.cpp -DDEBUG -Wall -Wshadow -Wextra -std=c++23 &&
+    clang++ $1.cpp -o $1 -Wall -Wextra -Wshadow -D_GLIBCXX_DEBUG &&
     echo "compiled successfully!" &&
     ./$1
 }

@@ -5,7 +5,7 @@
   "modules-right": ["tray", "network", "custom/bluetooth", "pulseaudio", "backlight","battery", "custom/power"],
 
   "hyprland/window": {
-    "format" : "  {}"
+    "format" : "󰣇  {}"
   },
   "hyprland/workspaces": {
     "sort-by-name": true,
