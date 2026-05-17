@@ -14,6 +14,7 @@ https://github.com/user-attachments/assets/9a1fc7c2-45cd-4f00-810a-2a0fd4bffee0
 - bluetooth manager: blueman-manager
 - file search: fd
 - logout menu: wlogout
+- cursor: bibata-cursor-themes
 - color theme (optional): Catppuccin Mocha
 - XDG Desktop Portal: xdg-desktop-portal, xdg-desktop-portal-hyprland, xdg-desktop-portal-gtk
 
