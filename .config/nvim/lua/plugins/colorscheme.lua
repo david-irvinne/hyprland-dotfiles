@@ -1,6 +1,12 @@
 return {
-  -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+  -- {
+  --   "ellisonleao/gruvbox.nvim",
+  --   config = function()
+  --     require("gruvbox").setup({
+  --       transparent_mode = true,
+  --     })
+  --   end,
+  -- },
   {
     "catppuccin/nvim",
     lazy = false,
@@ -15,18 +21,19 @@ return {
           solid = true,
         },
       })
-      vim.cmd.colorscheme "catppuccin"
+      vim.cmd.colorscheme("catppuccin")
       -- warna nomor biasa
       vim.api.nvim_set_hl(0, "LineNr", { fg = "#B4BEFE" })
       -- warna nomor pada baris aktif
-      vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#F38BA8"  })
-    end
+      vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#F38BA8" })
+    end,
   },
 
   {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "catppuccin",
+      -- colorscheme = "gruvbox",
     },
-  }
+  },
 }
