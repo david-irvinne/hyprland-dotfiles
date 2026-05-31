@@ -25,11 +25,11 @@ gurafetch
 
 # compile c++ script
 cc() {
-  clang++ $1.cpp -o $1 -Wall -Wextra -Wshadow -D_GLIBCXX_DEBUG -DDEBUG
+  clang++ $1.cpp -o $1 -Wall -Wextra -Wshadow -D_GLIBCXX_DEBUG -DDEBUG -std=c++20
 }
 # compile and run c++ script
 cr() {
-  clang++ $1.cpp -o $1 -Wall -Wextra -Wshadow -D_GLIBCXX_DEBUG -DDEBUG &&
+  clang++ $1.cpp -o $1 -Wall -Wextra -Wshadow -D_GLIBCXX_DEBUG -DDEBUG -std=c++20 &&
     echo "compiled successfully!" &&
     ./$1
 }
