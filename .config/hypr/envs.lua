@@ -12,6 +12,11 @@ hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
+hl.config({
+	xwayland = {
+		force_zero_scaling = true,
+	},
+})
 -- env = XCURSOR_SIZE,24
 -- env = HYPRCURSOR_SIZE,24
 --

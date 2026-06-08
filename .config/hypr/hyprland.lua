@@ -12,14 +12,8 @@
 ------------------
 ---- MONITORS ----
 ------------------
-
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
-hl.monitor({
-	output = "",
-	mode = "preferred",
-	position = "auto",
-	scale = "auto",
-})
+require("monitors")
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -212,7 +206,12 @@ hl.window_rule({
 	float = true,
 })
 
--- TODO: add floating windowrule for pavucontrol and bluetooth-manager
+hl.window_rule({
+	name = "float-pavucontrol-bluetooth-manager",
+	match = { class = "^((org\\.pulseaudio\\.)?pavucontrol|blueman-manager|bluetooth-manager)$" },
+
+	float = true,
+})
 
 -- TODO: test this
 -- Trigger when the switch is toggled.
