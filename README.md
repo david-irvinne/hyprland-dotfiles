@@ -3,7 +3,7 @@ https://github.com/user-attachments/assets/9a1fc7c2-45cd-4f00-810a-2a0fd4bffee0
 
 ## dependencies list
 - window tiling manager: hyprland 
-- status bar: waybar
+- status bar: waybar-git
 - app launcher: rofi
 - lockscreen: hyprlock 
 - idle management: hypridle
@@ -41,3 +41,7 @@ hypr-config/
 
 ![Rofi](assets/rofi.png)
 
+
+TODO:
+[ ] fix logout when accessed from wlogout
+[ ] waybar-git takes long time to start after booting
