@@ -43,5 +43,5 @@ hypr-config/
 
 
 TODO:
-[ ] fix logout when accessed from wlogout
-[ ] waybar-git takes long time to start after booting
+[ ] bring back background blur in rofi 
+[ ] lags in obs when recording 
