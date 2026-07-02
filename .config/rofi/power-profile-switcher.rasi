@@ -55,11 +55,11 @@ prompt {
 
 entry {
     text-color: @input-fg;
-    placeholder: "Choose monitor layout...";
+    placeholder: "Choose power profile...";
 }
 
 listview {
-    lines: 4;
+    lines: 3;
     columns: 1;
     fixed-height: false;
 

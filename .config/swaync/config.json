@@ -62,6 +62,7 @@
       "device": "intel_backlight"
     },
     "buttons-grid": {
+      "buttons-per-row": 4,
       "actions": [
         {
           "label": " ",
@@ -87,20 +88,20 @@
           "command": "hyprlock"
         },
         {
-          "label": "󰍃",
-          "command": "wlogout"
-        },
-        {
           "label": "󰍺 ",
           "command": "bash -c $HOME/.config/rofi/scripts/monitor-switcher.sh"
         },
         {
-          "label": " 󰀻 ",
-          "command": "bash -c $HOME/.config/rofi/scripts/app-launcher.sh"
-        },
-        {
           "label": " 󰏘 ",
           "command": "bash -c hyprpicker -a -f hex"
+        },
+        {
+          "label": " ",
+          "command": "bash -c $HOME/.config/rofi/scripts/power-profile-switcher.sh"
+        },
+        {
+          "label": "󰍃",
+          "command": "wlogout"
         }
       ]
     }
