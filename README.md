@@ -44,4 +44,3 @@ hypr-config/
 
 TODO:
 [ ] bring back background blur in rofi 
-[ ] lags in obs when recording 
