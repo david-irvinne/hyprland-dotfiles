@@ -197,6 +197,13 @@ hl.window_rule({
 -- })
 -- overlayLayerRule:set_enabled(false)
 
+-- avoid hyprshot having black border
+hl.layer_rule({
+	name = "avoid-ss-border",
+	match = { namespace = "selection" },
+	no_anim = true,
+})
+
 -- Hyprland-run windowrule
 hl.window_rule({
 	name = "move-hyprland-run",
