@@ -43,5 +43,4 @@ hypr-config/
 
 
 TODO:
-[ ] power profile selector, connect to swaync 
 [ ] bring back background blur in rofi 
