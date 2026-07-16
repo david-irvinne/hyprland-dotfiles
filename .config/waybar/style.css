@@ -34,6 +34,7 @@ window#waybar {
 #window,
 #time,
 #tray,
+#memory,
 #network,
 #custom-bluetooth,
 #pulseaudio, 
@@ -100,6 +101,13 @@ window#waybar {
   border-bottom-right-radius: 24px;
 }
 
+#memory{
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 12px;
+  margin-right: 6px;
+}
 
 #tray{
     border-top-left-radius: 12px;
