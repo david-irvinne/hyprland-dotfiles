@@ -215,12 +215,12 @@ trough slider {
 }
 
 trough highlight {
-  min-height: 4px;   
+  min-height: 20px;   
   border-radius: 4px;
 }
 
 .widget-volume trough highlight {
-  background: @lavender;     /* progress backlight */
+  background: @lavender;     /* progress volume */
 }
 .widget-volume trough slider:hover {
   background: @lavender;  
