@@ -20,7 +20,7 @@ fi
 
 mkdir -p "$CACHE_DIR"
 
-# Cache is saved so it wont always be regenerated  
+# Cache is saved so it wont always be regenerated
 get_icon() {
   local file="$1"
   local ext="${file,,}"
@@ -53,7 +53,7 @@ mapfile -t FILES < <(find "$DIR" -type f \( \
   -iname "*.jpg" -o \
   -iname "*.jpeg" -o \
   -iname "*.webp" \
-\) | sort)
+  \) | sort)
 
 if [ ${#FILES[@]} -eq 0 ]; then
   notify-send "❌ No Wallpaper Found" "No image files found in:\n$DIR" \
@@ -91,8 +91,8 @@ done
 
 [ -z "$SELECTED_FILE" ] && exit 1
 
-# ── apply wallpaper via swww ────────────────────────────────
-swww img "$SELECTED_FILE" \
+# ── apply wallpaper via awww ────────────────────────────────
+awww img "$SELECTED_FILE" \
   --transition-type random \
   --transition-duration 2 \
   --transition-fps 60 \

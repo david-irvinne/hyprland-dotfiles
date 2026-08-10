@@ -227,3 +227,8 @@ hl.bind("switch:[switch name]", hl.dsp.exec_cmd("hyprlock"), { locked = true })
 hl.bind("switch:on:[switch name]", hl.dsp.exec_cmd("notify-send 'yooo'"), { locked = true })
 -- Trigger when the switch is turning off.
 hl.bind("switch:off:[switch name]", hl.dsp.exec_cmd("notify-send 'among us'"), { locked = true })
+
+---------------------
+------ PLUGINS ------
+---------------------
+require("plugins")
