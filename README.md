@@ -45,4 +45,3 @@ hypr-config/
 
 TODO:
 [ ] bring back background blur in rofi 
-[ ] add warning for exiting hyprland 
