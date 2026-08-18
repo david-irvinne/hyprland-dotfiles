@@ -45,3 +45,4 @@ hypr-config/
 
 TODO:
 [ ] bring back background blur in rofi 
+[ ] blur/lower opacity for waybar?

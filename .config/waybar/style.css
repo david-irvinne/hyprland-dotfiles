@@ -1,7 +1,7 @@
 @import "/home/david/hypr-config/.config/colors/mocha.css"; 
 
 * {
-    font-family: "CaskaydiaCove NF ExtraLight";
+    font-family: "CaskaydiaCove NF Light";
     font-size: 13px;
     min-height: 0;
     font-weight: bold; 
@@ -44,13 +44,14 @@ window#waybar {
 #pulseaudio-slider,
 #backlight-slider,
 #backlight{
-    background: @base;
+    background: alpha(@crust, 0.7);
     margin-top: 4px;
     margin-bottom: 3px;
     padding-left: 12px;
     padding-right: 12px;
     padding-top: 2px;
     padding-bottom: 2px;
+    color: @text;
 }
 
 #window{
@@ -60,7 +61,6 @@ window#waybar {
     border-bottom-left-radius: 12px;
     margin-left: 6px;
     margin-right: 18px;
-    color: @mauve;
 }
 
 #workspaces{
@@ -72,7 +72,7 @@ window#waybar {
 }
 #workspaces button.active {
     color: @mauve;
-    background: @surface1;
+    background: @base;
 }
 #workspaces button.hover {
     color: @mauve;
@@ -91,11 +91,7 @@ window#waybar {
   border-top-right-radius: 12px;
   border-bottom-right-radius: 24px;
 }
-#clock{
-    color: @sky;
-}
 #custom-date{
-  color: @sky;
   padding-left: 8px;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 24px;
@@ -110,17 +106,14 @@ window#waybar {
 }
 
 #tray{
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 24px;
-    padding-right: 1px;
-}
-#tray > widget:hover {
-	background: @surface0;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 24px;
+  padding-right: 1px;
 }
 
 #network{
-    color: @text;
-    padding-left: 2px;
+  color: @text;
+  padding-left: 2px;
 }
 #custom-bluetooth{
     border-top-right-radius: 24px;
@@ -131,15 +124,11 @@ window#waybar {
 #pulseaudio{
     border-top-left-radius: 12px;
     border-bottom-left-radius: 24px;
-    color: @lavender;
 }
 #backlight {
     color: @rosewater;
     padding-left: 8px;
     padding-right: 8px;
-}
-#battery{
-    color: @lavender;
 }
 #custom-power {
     border-top-right-radius: 24px;
@@ -149,6 +138,7 @@ window#waybar {
     color: @red;
 }
 
+#tray > widget:hover,
 #network:hover,
 #custom-bluetooth:hover, 
 #pulseaudio:hover,
