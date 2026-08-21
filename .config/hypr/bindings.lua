@@ -3,6 +3,7 @@
 local programs = require("programs")
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 local mainModShift = "SUPER + SHIFT"
+local secondMod = "ALT"
 
 -- PROGRAMS
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(programs.terminal))
@@ -29,6 +30,11 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 -- hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
+-- Toggle ScrollOverview
+hl.bind(secondMod .. " + TAB", function()
+	hl.plugin.scrolloverview.overview("toggle all")
+end)
+hl.bind(mainMod .. " + TAB", hl.dsp.focus({ direction = "right" }))
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
@@ -86,8 +92,6 @@ hl.bind(mainModShift .. " + Y", hl.dsp.exec_cmd("swaync-client -rs && swaync-cli
 -- bindr = Ctrl+Super, mouse:272, exec, hyprctl keyword cursor:zoom_factor 1.0
 -- hl.bind("CTRL + SUPER + mouse:272", hl.dsp.cursor.zoo("hyprctl keyword cursor:zoom_factor 3.0"))
 -- hl.bind("CTRL + SUPER + mouse:272", hl.dsp.exec_cmd("hyprctl keyword cursor:zoom_factor 1.0"), { release = true })
-hl.bind("CTRL + SUPER + mouse:272", hl.dsp.exec_cmd("hyprctl keyword cursor:zoom_factor 3.0"))
-hl.bind("CTRL + SUPER + mouse:272", hl.dsp.exec_cmd("hyprctl keyword cursor:zoom_factor 1.0"), { release = true })
 
 -- TODO: test this
 -- Laptop multimedia keys for volume and LCD brightness
