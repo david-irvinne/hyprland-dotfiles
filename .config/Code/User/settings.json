@@ -1,0 +1,32 @@
+{
+    "editor.tabSize": 2,
+    "editor.minimap.enabled": false,
+    "clangd.path": "/home/david/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/19.1.2/clangd_19.1.2/bin/clangd",
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "git.openRepositoryInParentFolders": "always",
+    "explorer.confirmDelete": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "editor.lineNumbers": "relative",
+
+    "vim.handleKeys": {
+        "<C-f>": false,
+        "<C-w>": false,
+        "<C-p>": false
+    },
+    //"editor.autoClosingBrackets": "never",
+    //"editor.autoClosingQuotes": "never",
+
+    "vim.useSystemClipboard": true,      // clipboard sama dengan OS
+    "vim.hlsearch": true,                // highlight hasil search
+    "vim.incsearch": true,
+    "vim.leader": "<space>",             // leader key = spasi
+    "vim.normalModeKeyBindingsNonRecursive": [
+            {
+            "before": ["<leader>", "w"],
+            "commands": ["workbench.action.closeActiveEditor"]  // space+w = tutup tab
+            }
+        ],
+}
