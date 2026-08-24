@@ -1,10 +1,21 @@
 -- DMS user keybind overrides (edit via Control Center or dms; do not remove this header)
 
 hl.unbind("SUPER + A")
-hl.bind("SUPER + A", hl.dsp.exec_cmd("dms ipc call spotlight toggle"), { description = "dms ipc call spotlight toggle" })
+hl.bind(
+	"SUPER + A",
+	hl.dsp.exec_cmd("dms ipc call spotlight toggle"),
+	{ description = "dms ipc call spotlight toggle" }
+)
 hl.unbind("SUPER + Q")
 hl.bind("SUPER + Q", hl.dsp.exec_cmd("alacritty"), { description = "alacritty" })
 hl.unbind("SUPER + C")
 hl.bind("SUPER + C", hl.dsp.window.close(), { description = "Close window" })
 hl.unbind("SUPER + T")
 hl.unbind("SUPER + space")
+hl.unbind("SUPER + M")
+hl.bind("SUPER + M", hl.dsp.layout("colresize +conf"), { description = "Cycle column width (scrolling layout)" })
+hl.bind(
+	"SUPER + SHIFT + M",
+	hl.dsp.exec_cmd("dms ipc call processlist focusOrToggle"),
+	{ description = "dms ipc call processlist focusOrToggle" }
+)

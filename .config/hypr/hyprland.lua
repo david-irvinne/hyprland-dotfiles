@@ -51,12 +51,27 @@ hl.config({
 	},
 })
 
-hl.animation({ leaf = "windowsIn", enabled = true, speed = 3, bezier = "default" })
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "default" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "default" })
-hl.animation({ leaf = "windowsMove", enabled = true, speed = 4, bezier = "default" })
-hl.animation({ leaf = "fade", enabled = true, speed = 3, bezier = "default" })
-hl.animation({ leaf = "border", enabled = true, speed = 3, bezier = "default" })
+hl.config({
+	scrolling = {
+		fullscreen_on_one_column = true,
+		follow_min_visible = 1,
+		explicit_column_widths = "0.3, 0.5, 0.7, 1.0",
+	},
+})
+
+hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
+hl.animation({ leaf = "border", enabled = true, speed = 5.0, bezier = "easeOutQuint" })
+hl.animation({ leaf = "windows", enabled = true, speed = 4.0, bezier = "easeOutQuint" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.49, bezier = "linear", style = "popin 87%" })
+hl.animation({ leaf = "fade", enabled = true, speed = 3.03, bezier = "quick" })
+hl.animation({
+	leaf = "workspaces",
+	enabled = true,
+	speed = 3.0,
+	bezier = "quick",
+	style = "slidevert",
+})
+hl.animation({ leaf = "zoomFactor", enabled = true, speed = 6, bezier = "easeOut" })
 
 hl.window_rule({ match = { class = "^(org\\.wezfurlong\\.wezterm)$" }, tile = true })
 hl.window_rule({ match = { class = "^(org\\.gnome\\.)" }, rounding = 12 })
