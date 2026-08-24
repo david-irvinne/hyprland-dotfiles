@@ -24,19 +24,20 @@ hl.config({
 		gaps_in = 5,
 		gaps_out = 5,
 		border_size = 2,
-		-- layout = "dwindle",
 		layout = "scrolling",
 	},
 	decoration = {
-		rounding = 12,
+		rounding = 8,
+		rounding_power = 4,
+
 		active_opacity = 1.0,
 		inactive_opacity = 1.0,
-		shadow = {
+
+		blur = {
 			enabled = true,
-			range = 30,
-			render_power = 5,
-			offset = "0 5",
-			color = "rgba(00000070)",
+			size = 8,
+			passes = 2,
+			new_optimizations = true,
 		},
 	},
 	misc = {
@@ -59,6 +60,23 @@ hl.config({
 	},
 })
 
+hl.gesture({
+	fingers = 3,
+	scale = 1.2,
+	direction = "vertical",
+	action = "workspace",
+})
+-- Screen Zoom to cursor
+hl.gesture({ fingers = 2, direction = "pinch", action = "cursor_zoom", zoom_level = 2, mode = "live" })
+
+-- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
+hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
+hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36, 1 } } })
+hl.curve("linear", { type = "bezier", points = { { 0, 0 }, { 1, 1 } } })
+hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 } } })
+hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
+hl.curve("easeOut", { type = "bezier", points = { { 0.16, 1 }, { 0.3, 1 } } })
+
 hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
 hl.animation({ leaf = "border", enabled = true, speed = 5.0, bezier = "easeOutQuint" })
 hl.animation({ leaf = "windows", enabled = true, speed = 4.0, bezier = "easeOutQuint" })
@@ -75,13 +93,9 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 6, bezier = "easeOut
 
 hl.window_rule({ match = { class = "^(org\\.wezfurlong\\.wezterm)$" }, tile = true })
 hl.window_rule({ match = { class = "^(org\\.gnome\\.)" }, rounding = 12 })
-hl.window_rule({ match = { class = "^(gnome-control-center)$" }, tile = true })
-hl.window_rule({ match = { class = "^(pavucontrol)$" }, tile = true })
-hl.window_rule({ match = { class = "^(nm-connection-editor)$" }, tile = true })
 hl.window_rule({ match = { class = "^(org\\.gnome\\.Calculator)$" }, float = true })
 hl.window_rule({ match = { class = "^(gnome-calculator)$" }, float = true })
 hl.window_rule({ match = { class = "^(galculator)$" }, float = true })
-hl.window_rule({ match = { class = "^(blueman-manager)$" }, float = true })
 hl.window_rule({ match = { class = "^(org\\.gnome\\.Nautilus)$" }, float = true })
 hl.window_rule({ match = { class = "^(xdg-desktop-portal)$" }, float = true })
 hl.window_rule({
