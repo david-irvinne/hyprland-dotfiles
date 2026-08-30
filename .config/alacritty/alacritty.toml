@@ -1,12 +1,12 @@
 [general]
 import = [
-  "~/.config/alacritty/dank-theme.toml"
+  "~/.config/alacritty/catppucin.toml"
 ]
 
 [window]
-decorations = "None"
+decorations = "Full"
 padding = { x = 12, y = 12 }
-opacity = 0.8
+opacity = 0.8 
 
 [scrolling]
 history = 3023
