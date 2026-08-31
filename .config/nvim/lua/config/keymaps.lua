@@ -19,8 +19,7 @@ vim.keymap.set("n", "<A-S-h>", ":BufferLineMovePrev<CR>", { desc = "Move buffer 
 -- exit terminal job mode
 vim.api.nvim_set_keymap("t", "<Esc>", [[<C-\><C-n>]], { noremap = true })
 
--- F5: Compile C++ (async) → notif "Compiling..." saat jalan, error di quickfix
-vim.keymap.set("n", "<F5>", function()
+local function handleCPPcompile(on_success)
   if vim.g.cpp_compiling then
     vim.notify("Compilation already in progress", vim.log.levels.WARN)
     return
@@ -60,6 +59,9 @@ vim.keymap.set("n", "<F5>", function()
         vim.g.cpp_compiling = false
         if code == 0 then
           vim.notify("Build successful: " .. fname, vim.log.levels.INFO, { title = "Compile" })
+          if on_success then
+            on_success()
+          end
         else
           local lines = {}
           for _, l in ipairs(stderr) do
@@ -74,16 +76,38 @@ vim.keymap.set("n", "<F5>", function()
       end)
     end,
   })
-end, { noremap = true, silent = false, desc = "Compile C++ (async, errors -> quickfix)" })
+end
 
--- F6: Execute binary di window Alacritty terpisah (tidak memakai :terminal nvim)
-vim.keymap.set("n", "<F6>", function()
+local function handleCPPrun()
   local bin = vim.fn.expand("%:p:r")
   vim.fn.jobstart({
     "alacritty",
+    "--class",
+    "nvim-run",
     "-e",
     "bash",
     "-c",
     ("%s; echo; read -n1 -s -r -p 'Press any key to close'"):format(vim.fn.shellescape(bin)),
   }, { detach = true })
-end, { noremap = true, silent = false, desc = "Run binary in external Alacritty window" })
+end
+
+-- F5: Compile C++ (async) → notif "Compiling..." saat jalan, error di quickfix
+vim.keymap.set(
+  "n",
+  "<F5>",
+  handleCPPcompile,
+  { noremap = true, silent = false, desc = "Compile C++ (async, errors -> quickfix)" }
+)
+
+-- F6: Execute binary di window Alacritty terpisah (tidak memakai :terminal nvim)
+vim.keymap.set(
+  "n",
+  "<F6>",
+  handleCPPrun,
+  { noremap = true, silent = false, desc = "Run binary in external Alacritty window" }
+)
+
+-- F7: compile and run c++ file
+vim.keymap.set("n", "<F7>", function()
+  handleCPPcompile(handleCPPrun)
+end, { noremap = true, silent = false, desc = "Compile C++ and run its binary in external Alacritty window" })

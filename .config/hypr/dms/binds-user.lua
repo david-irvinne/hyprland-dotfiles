@@ -28,3 +28,6 @@ hl.bind(
 	hl.dsp.exec_cmd("bash $HOME/hypr-config/.config/rofi/scripts/rofi-file-search.sh"),
 	{ description = "File search" }
 )
+
+--in case no mouse for right click
+hl.bind("SUPER + SHIFT " .. " + mouse:272", hl.dsp.window.resize(), { mouse = true })

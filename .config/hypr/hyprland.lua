@@ -91,6 +91,12 @@ hl.animation({
 })
 hl.animation({ leaf = "zoomFactor", enabled = true, speed = 6, bezier = "easeOut" })
 
+hl.window_rule({
+	match = { class = "^(nvim-run)$" },
+	float = true,
+	size = "600 400",
+	center = true,
+})
 hl.window_rule({ match = { class = "^(org\\.wezfurlong\\.wezterm)$" }, tile = true })
 hl.window_rule({ match = { class = "^(org\\.gnome\\.)" }, rounding = 12 })
 hl.window_rule({ match = { class = "^(org\\.gnome\\.Calculator)$" }, float = true })
