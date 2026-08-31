@@ -20,3 +20,11 @@ hl.bind("SUPER + E", hl.dsp.exec_cmd("nautilus"), { description = "File manager"
 
 hl.unbind("SUPER + V")
 hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }), { description = "Float/unfloat window" })
+
+-- rofi file search
+hl.unbind("SUPER + F")
+hl.bind(
+	"SUPER + F",
+	hl.dsp.exec_cmd("bash $HOME/hypr-config/.config/rofi/scripts/rofi-file-search.sh"),
+	{ description = "File search" }
+)

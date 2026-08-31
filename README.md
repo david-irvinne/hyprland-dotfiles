@@ -25,4 +25,4 @@ hypr-config/
 ## some screenshots :)
 
 TODO:
-[ ] file search 
+[ ] dms screenshot moves around between workspace 

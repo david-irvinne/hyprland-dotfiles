@@ -1,0 +1,119 @@
+configuration {
+    modi: "dmenu";
+    show-icons: false;
+    disable-history: false;
+    click-to-exit: true;
+    location: 0;
+}
+
+/* Palet DMS: panel gelap, teks lembut, dan aksen lavender. */
+* {
+    font: "Noto Sans 11";
+    background: #242126;
+    background-alt: #2d2931;
+    foreground: #e9e3eb;
+    foreground-muted: #aaa2b0;
+    accent: #cbb6ff;
+    selected: #46404d;
+    transparent: rgba(0, 0, 0, 0);
+}
+
+window {
+    fullscreen: false;
+    width: 42%;
+    height: 72%;
+    location: center;
+    anchor: center;
+    padding: 28px 16px 20px 16px;
+    border: 1px;
+    border-radius: 18px;
+    border-color: #4d4656;
+    background-color: @background;
+    transparency: "real";
+}
+
+mainbox {
+    orientation: vertical;
+    children: [ inputbar, listview ];
+    spacing: 22px;
+    background-color: @transparent;
+}
+
+inputbar {
+    children: [ entry ];
+    spacing: 0px;
+    padding: 11px 18px;
+    border: 2px;
+    border-radius: 14px;
+    border-color: @accent;
+    background-color: @background-alt;
+    text-color: @foreground;
+}
+
+entry {
+    enabled: true;
+    expand: true;
+    padding: 0px;
+    vertical-align: 0.5;
+    background-color: @transparent;
+    text-color: @foreground;
+    cursor: text;
+    placeholder: "Search files...";
+    placeholder-color: @foreground-muted;
+    font: "Noto Sans 12";
+}
+
+listview {
+    enabled: true;
+    columns: 1;
+    lines: 11;
+    spacing: 4px;
+    padding: 0px;
+    background-color: @transparent;
+    text-color: @foreground;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    fixed-height: false;
+    fixed-columns: true;
+    reverse: false;
+}
+
+element {
+    orientation: horizontal;
+    padding: 11px 16px;
+    border-radius: 12px;
+    background-color: @transparent;
+    text-color: @foreground;
+    cursor: pointer;
+}
+
+element normal.normal {
+    background-color: @transparent;
+    text-color: @foreground;
+}
+
+element alternate.normal {
+    background-color: @transparent;
+    text-color: @foreground;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color: @foreground;
+}
+
+element-text {
+    expand: true;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+    padding: 0px;
+    background-color: @transparent;
+    text-color: inherit;
+    font: "Noto Sans 11";
+}
+
+textbox {
+    background-color: @transparent;
+    text-color: @foreground-muted;
+}
