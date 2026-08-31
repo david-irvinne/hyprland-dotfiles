@@ -62,6 +62,7 @@
       "device": "intel_backlight"
     },
     "buttons-grid": {
+      "buttons-per-row": 4,
       "actions": [
         {
           "label": " ",
@@ -77,22 +78,31 @@
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && pactl set-source-mute @DEFAULT_SOURCE@ 1 || pactl set-source-mute @DEFAULT_SOURCE@ 0'",
           "update-command": "sh -c '[[ $(pactl get-source-mute @DEFAULT_SOURCE@) == *yes* ]] && echo true || echo false'"
         },
-
         {
           "label":"󰀝",
           "command": "bash -c $HOME/.config/hypr/scripts/airplaneMode.sh",
           "type": "toggle"
         },
-
         {
           "label": "󰌾",
           "command": "hyprlock"
         },
         {
+          "label": "󰍺 ",
+          "command": "bash -c $HOME/.config/rofi/scripts/monitor-switcher.sh"
+        },
+        {
+          "label": " 󰏘 ",
+          "command": "bash -c hyprpicker -a -f hex"
+        },
+        {
+          "label": " ",
+          "command": "bash -c $HOME/.config/rofi/scripts/power-profile-switcher.sh"
+        },
+        {
           "label": "󰍃",
           "command": "wlogout"
         }
-
       ]
     }
   }

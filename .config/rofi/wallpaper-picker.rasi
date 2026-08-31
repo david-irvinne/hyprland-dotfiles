@@ -17,7 +17,7 @@ configuration {
     input-border:               rgb(142, 89, 201);
     accent-color:               #8E59C9;
     no-color-transparent:       rgba(0, 0, 0, 0);
-    backdrop:                   rgba(0, 0, 0, 0.8);
+    backdrop:                   rgba(0, 0, 0, 0.5);
 }
 
 window {

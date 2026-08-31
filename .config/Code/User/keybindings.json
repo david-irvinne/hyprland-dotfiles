@@ -1,0 +1,10 @@
+[
+    {
+        "key": "ctrl+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text" : "g++ ${fileBasename} -DDEBUG -std=c++20 -fdiagnostics-color=always -Wall -Wshadow -Wextra -o ${fileBasenameNoExtension} && ./${fileBasenameNoExtension}\n"
+        },
+        "when": "editorTextFocus && resourceLangId == cpp"
+    }
+]

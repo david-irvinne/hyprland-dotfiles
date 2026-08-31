@@ -1,0 +1,92 @@
+* {
+    main-bg:              rgba(25, 25, 35, 0.95);
+    main-fg:              #e8e3e3;
+    select-bg:            rgba(203, 166, 247, 0.4);
+    select-fg:            #ffffff;
+    input-bg:             rgba(35, 35, 45, 0.5);
+    input-fg:             #e8e3e3;
+    input-border:         rgb(203, 166, 247);
+    accent-color:         #cba6f7;
+    no-color-transparent: rgba(0, 0, 0, 0);
+    backdrop:             rgba(0, 0, 0, 0.8);
+
+    background-color: @no-color-transparent;
+    text-color: @main-fg;
+    font: "JetBrainsMono Nerd Font 11";
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+
+    width: 420px;
+
+    background-color: @main-bg;
+
+    border: 2px;
+    border-color: @accent-color;
+    border-radius: 12px;
+
+    padding: 18px;
+}
+
+mainbox {
+    spacing: 12px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: @input-bg;
+
+    border: 1px;
+    border-color: @input-border;
+    border-radius: 8px;
+
+    padding: 10px;
+    spacing: 10px;
+
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color: @accent-color;
+}
+
+entry {
+    text-color: @input-fg;
+    placeholder: "Choose power profile...";
+}
+
+listview {
+    lines: 3;
+    columns: 1;
+    fixed-height: false;
+
+    spacing: 6px;
+    scrollbar: false;
+}
+
+element {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: @no-color-transparent;
+    text-color: @main-fg;
+}
+
+element selected {
+    background-color: @select-bg;
+    text-color: @select-fg;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
+
+element-icon {
+    size: 20px;
+}
+
+overlay {
+    background-color: @backdrop;
+}
