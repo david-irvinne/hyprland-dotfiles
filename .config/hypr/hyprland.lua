@@ -125,3 +125,7 @@ require("dms.binds")
 require("dms.binds-user")
 require("dms.windowrules")
 require("envs")
+
+-- PERSONAL KEYBINDS
+--in case no mouse for right click
+hl.bind("SUPER + SHIFT " .. " + mouse:272", hl.dsp.window.resize(), { mouse = true })
