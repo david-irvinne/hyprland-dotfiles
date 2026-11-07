@@ -2,6 +2,10 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
+      -- matikan inlay hints (petunjuk parameter seperti "n: 5") untuk C/C++
+      inlay_hints = {
+        enabled = false,
+      },
       servers = {
         clangd = {
           cmd = {
