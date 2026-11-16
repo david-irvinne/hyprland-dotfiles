@@ -97,6 +97,10 @@ hl.window_rule({
 	size = "600 400",
 	center = true,
 })
+hl.window_rule({
+	match = { title = ".*Android Emulator.*" },
+	scrolling_width = 0.3,
+})
 hl.window_rule({ match = { class = "^(org\\.wezfurlong\\.wezterm)$" }, tile = true })
 hl.window_rule({ match = { class = "^(org\\.gnome\\.)" }, rounding = 12 })
 hl.window_rule({ match = { class = "^(org\\.gnome\\.Calculator)$" }, float = true })
